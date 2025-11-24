@@ -1,6 +1,6 @@
 import pandas as pd
 
-from data.load_dataset import load_dataset
+from dataset_loader.load_dataset import load_dataset
 from model.gcn import GCN
 from explainer.gnn_explainer_wrapper import get_explanation_node
 from explainer.subgraphx_wrapper import SubgraphXExplainer
