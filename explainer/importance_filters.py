@@ -2,7 +2,10 @@ import torch
 import numpy as np
 
 def filtered_node_importance(explanation, subgraph):
-    node_importance = explanation.node_mask.sum(dim=1)
+    if explanation.node_mask.dim() == 1:
+        node_importance = explanation.node_mask
+    else:
+        node_importance = explanation.node_mask.sum(dim=1)
 
     if hasattr(subgraph, "node_idx_original"):
         return node_importance[subgraph.node_idx_original].cpu().numpy()

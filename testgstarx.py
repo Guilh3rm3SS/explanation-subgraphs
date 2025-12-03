@@ -48,7 +48,6 @@ explainer = GStarX(model=model, device=device,
                    )
 
 explanation = explainer.explain(data,
-                                node_idx=0,
                                 superadditive_ext=True,
                                 sample_method="khop",
                                 num_samples=-1,

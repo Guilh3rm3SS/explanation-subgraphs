@@ -1,0 +1,13 @@
+nohup: ignoring input
+Training model...
+
+Generating explanations...
+Running GNNExplainer...
+Running SubgraphX...
+
+📊 Correlations & MI:
+              closeness  betweenness  degree  eigenvector  pagerank
+gnn_pearson      0.1930       0.2217  0.2628       0.1577    0.2782
+gnn_mi           0.0000       0.0096  0.0000       0.0000    0.0000
+subx_pearson     0.8061       0.5445  0.6260       0.7481    0.5962
+subx_mi          0.5425       0.4603  0.2467       0.5073    0.2533
