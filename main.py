@@ -3,10 +3,11 @@ import os
 from dataset_loader.load_dataset import load_dataset
 from torch_geometric.datasets import TUDataset
 from model.gcn import GCN
-from explainer.gnn_explainer_wrapper import get_explanation_node, get_explanation_node_binary
+from explainer.gnn_explainer_wrapper import get_explainer
 from explainer.subgraphx_wrapper import SubgraphXExplainer
 from explainer.subgraph_utils import get_khop_subgraph
 from explainer.importance_filters import filtered_node_importance
+from torch_geometric.explain.metric import fidelity, characterization_score
 from metrics.centralities import get_centralities
 from metrics.correlations import get_correlation_centralities, get_mutual_information_centralities
 import torch.nn.functional as F
@@ -14,10 +15,13 @@ import torch
 
 # ========= Load Dataset =========
 # names: PubMed, CiteSeer, KarateClub, Mutag, Cora
-dataset_name = "KarateClub"
+dataset_name = "CiteSeer"
 dataset, data = load_dataset(dataset_name)
 
+target = None
 explanation_type = "phenomenon"
+if explanation_type == "phenomenon":
+    target = data.y
 
 # ========= Build & train model =========
 model = GCN(dataset)
@@ -60,26 +64,41 @@ def calculate_metrics(explanation, centralities, subgraph, results, prefix):
     results[f"{prefix}_mi"] = mi
 
 # 1. GNNExplainer
-# print("Running GNNExplainer...", flush=True)
-# gnn_explainer = get_explanation_node(model, data, algorithm="gnnexplainer", explanation_type=explanation_type, epochs=200, lr=0.1)
-# calculate_metrics(gnn_explainer, centralities, subgraph, results, "gnn")
+gnn_explainer_explanation = None
+gnn_explainer_characterization_score = 0
+gnn_explainer_fidelity = (0, 0)
+for i in range(5):
+    print(f"Running GNNExplainer {i+1}...", flush=True)
+    gnn_explainer = get_explainer(model, data, algorithm="gnnexplainer", explanation_type=explanation_type, epochs=200, lr=0.1)
+    it_explanation = gnn_explainer(data.x, data.edge_index, index=None, target=target)
+    
+    it_fidelity = fidelity(gnn_explainer, it_explanation)
+    it_characterization_score = characterization_score(it_fidelity[0], it_fidelity[1])
+    print("GNNExplainer fidelity:", it_fidelity)
+    print("GNNExplainer characterization score:", it_characterization_score)
+    if it_characterization_score > gnn_explainer_characterization_score:
+        gnn_explainer_characterization_score = it_characterization_score
+        gnn_explainer_fidelity = it_fidelity
+        gnn_explainer_explanation = it_explanation
+
+calculate_metrics(gnn_explainer_explanation, centralities, subgraph, results, "gnn")
 
 # 2. PGExplainer
 # print("Running PGExplainer...", flush=True)
-# pg_explainer = get_explanation_node(model, data, algorithm="pgexplainer", epochs=200, lr=0.1)
+# pg_explainer = get_explainer(model, data, algorithm="pgexplainer", epochs=200, lr=0.1)
 # calculate_metrics(pg_explainer, centralities, subgraph, results, "pg")
 
 # 3. GraphMask
 # print("Running GraphMask...", flush=True)
-# graphmask_explainer = get_explanation_node(model, data, algorithm="graphmask", explanation_type=explanation_type, epochs=200, lr=0.1)
+# graphmask_explainer = get_explainer(model, data, algorithm="graphmask", explanation_type=explanation_type, epochs=200, lr=0.1)
 # calculate_metrics(graphmask_explainer, centralities, subgraph, results, "graphmask")
 
 # 4. Captum
 # print("Running Captum...", flush=True)
-# captum_explainer = get_explanation_node(model, data, algorithm="captum", epochs=200, lr=0.1)
+# captum_explainer = get_explainer(model, data, algorithm="captum", epochs=200, lr=0.1)
 # calculate_metrics(captum_explainer, centralities, subgraph, results, "captum")
 
-# exp_gnn_binary = get_explanation_node_binary(model, data)
+# exp_gnn_binary = get_explainer_binary(model, data)
 # calculate_metrics(exp_gnn_binary, centralities, subgraph, results, "gnn_binary")
 
 # 2. SubgraphX
@@ -101,24 +120,31 @@ def calculate_metrics(explanation, centralities, subgraph, results, prefix):
 # PGexplainer
 
 # Save results
-# df = pd.DataFrame(results).T
-# print("\n📊 Correlations & MI:", flush=True)
-# print(df.round(4), flush=True)
+df = pd.DataFrame(results).T
+print("\n📊 Correlations & MI:", flush=True)
+print(df.round(4), flush=True)
 
-# folder = f"./csv_outputs/{dataset_name}"
-# os.makedirs(folder, exist_ok=True)
+results_base_folder = f"results/{dataset_name}"
+os.makedirs(results_base_folder, exist_ok=True)
 
-# # gerar nome único
-# base_name = os.path.join(folder, f"correlations_{dataset_name}")
-# ext = ".csv"
+# Generate unique run folder
+run_id = 1
+while True:
+    run_folder_name = f"run_{run_id:03d}"
+    run_folder_path = os.path.join(results_base_folder, run_folder_name)
+    if not os.path.exists(run_folder_path):
+        os.makedirs(run_folder_path)
+        break
+    run_id += 1
 
-# filename = f"{base_name}{ext}"
-# counter = 1
+filename = f"correlations.csv"
+file_path = os.path.join(run_folder_path, filename)
 
-# while os.path.exists(filename):
-#     filename = f"{base_name}_{counter}{ext}"
-#     counter += 1
+# Save
+df.to_csv(file_path, index=True)
+print("Salvo em:", file_path)
 
-# # salvar
-# df.to_csv(filename, index=False)
-# print("Salvo em:", filename)
+with open(f"{run_folder_path}/fidelity.txt", "w") as f:
+    print(f"positive fidelity: {gnn_explainer_fidelity[0]}", file=f)
+    print(f"negative fidelity: {gnn_explainer_fidelity[1]}", file=f)
+    print(f"characterization score: {gnn_explainer_characterization_score}", file=f)
