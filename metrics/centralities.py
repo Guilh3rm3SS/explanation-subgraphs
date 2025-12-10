@@ -18,6 +18,8 @@ def get_centralities(data):
         "closeness": nx.closeness_centrality(G),
         "betweenness": nx.betweenness_centrality(G),
         "degree": nx.degree_centrality(G),
+        "in_degree": nx.in_degree_centrality(G),
+        "out_degree": nx.out_degree_centrality(G),
         "eigenvector": nx.eigenvector_centrality(G, weight="weight"),
         "pagerank": nx.pagerank(G, weight="weight"),
     }

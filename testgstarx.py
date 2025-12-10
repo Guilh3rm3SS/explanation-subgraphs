@@ -41,16 +41,17 @@ model.eval()
 explainer = GStarX(model=model, device=device,
                     max_sample_size=10,
                     tau=0.01,
-                    payoff_type="norm_prob",
+                    payoff_type="prob",
                     payoff_avg=None,
-                    subgraph_building_method="remove",
+                    subgraph_building_method="zero_filling",
                    
                    )
 
 explanation = explainer.explain(data,
+                                node_idx=0,
                                 superadditive_ext=True,
                                 sample_method="khop",
-                                num_samples=-1,
+                                num_samples=1,
                                 k=2
                                 )
 print(explanation)
