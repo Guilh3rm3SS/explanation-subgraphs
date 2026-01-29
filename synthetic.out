@@ -1,0 +1,1568 @@
+Explanation(edge_index=[2, 27312], y=[400], edge_mask=[27312], node_mask=[400], x=[400, 1])
+Best validation loss: 1.296277642250061
+Best validation loss: 0.8460241556167603
+Best validation loss: 0.8106933832168579
+Best validation loss: 0.8071625828742981
+Best validation loss: 0.8306096792221069
+Best validation loss: 0.8584380149841309
+Best validation loss: 1.2402175664901733
+Best validation loss: 0.8327638506889343
+Best validation loss: 0.8174217939376831
+Best validation loss: 0.821275532245636
+Best validation loss: 0.8127007484436035
+Best validation loss: 0.7463971972465515
+Best validation loss: 1.4630489349365234
+Best validation loss: 1.1996139287948608
+Best validation loss: 0.8628633618354797
+Best validation loss: 0.8299763798713684
+Best validation loss: 0.816379189491272
+Best validation loss: 0.8926075100898743
+Best validation loss: 1.4379383325576782
+Best validation loss: 1.1685001850128174
+Best validation loss: 0.8161716461181641
+Best validation loss: 0.8166812658309937
+Best validation loss: 0.8296653628349304
+Best validation loss: 0.7339252233505249
+Best validation loss: 1.709973931312561
+Best validation loss: 0.9650061726570129
+Best validation loss: 0.8093360662460327
+Best validation loss: 0.8173378109931946
+Best validation loss: 0.7710602879524231
+Best validation loss: 0.729621946811676
+Best validation loss: 1.9183924198150635
+Best validation loss: 0.8874597549438477
+Best validation loss: 0.8174623250961304
+Best validation loss: 0.8063420057296753
+Best validation loss: 0.7721894383430481
+Best validation loss: 0.7296038866043091
+Best validation loss: 1.1953294277191162
+Best validation loss: 0.9371997714042664
+Best validation loss: 0.821530818939209
+Best validation loss: 0.8206345438957214
+Best validation loss: 0.8215038180351257
+Best validation loss: 0.828149139881134
+Best validation loss: 1.8545386791229248
+Best validation loss: 0.9399017095565796
+Best validation loss: 0.8332526087760925
+Best validation loss: 0.8396614789962769
+Best validation loss: 0.8134872317314148
+Best validation loss: 0.7512871026992798
+Best validation loss: 1.5580633878707886
+Best validation loss: 0.9588556289672852
+Best validation loss: 0.8445374369621277
+Best validation loss: 0.816497802734375
+Best validation loss: 0.7581567764282227
+Best validation loss: 0.7352491617202759
+Best validation loss: 1.10347580909729
+Best validation loss: 0.8658472299575806
+Best validation loss: 0.8122572898864746
+Best validation loss: 0.8186032176017761
+Best validation loss: 0.8249478340148926
+Best validation loss: 0.7332144975662231
+Best validation loss: 0.8847173452377319
+Best validation loss: 0.8259960412979126
+Best validation loss: 0.8710382580757141
+Best validation loss: 0.8332727551460266
+Best validation loss: 0.8185110092163086
+Best validation loss: 0.7092126607894897
+Best validation loss: 1.5495283603668213
+Best validation loss: 1.037007212638855
+Best validation loss: 0.8030506372451782
+Best validation loss: 0.8223291635513306
+Best validation loss: 0.8108223676681519
+Best validation loss: 0.8226360082626343
+Best validation loss: 0.9041815996170044
+Best validation loss: 0.7981645464897156
+Best validation loss: 0.8037487268447876
+Best validation loss: 0.7610002160072327
+Best validation loss: 0.8043192625045776
+Best validation loss: 0.8262368440628052
+Best validation loss: 0.8883668780326843
+Best validation loss: 0.7987075448036194
+Best validation loss: 0.7960764169692993
+Best validation loss: 0.7450262308120728
+Best validation loss: 0.8070457577705383
+Best validation loss: 0.8284028172492981
+Best validation loss: 0.8986257314682007
+Best validation loss: 0.7987722754478455
+Best validation loss: 0.8010457158088684
+Best validation loss: 0.7805342078208923
+Best validation loss: 0.8070670962333679
+Best validation loss: 0.8172751665115356
+Best validation loss: 0.8433696031570435
+Best validation loss: 0.797538161277771
+Best validation loss: 0.8094625473022461
+Best validation loss: 0.7705926895141602
+Best validation loss: 0.8031886219978333
+Best validation loss: 0.8261206746101379
+Best validation loss: 0.8703283071517944
+Best validation loss: 0.7953406572341919
+Best validation loss: 0.7959804534912109
+Best validation loss: 0.8018668293952942
+Best validation loss: 0.8025897145271301
+Best validation loss: 0.8261508941650391
+Best validation loss: 0.8879567384719849
+Best validation loss: 0.7988191246986389
+Best validation loss: 0.8021243214607239
+Best validation loss: 0.8000530004501343
+Best validation loss: 0.8053000569343567
+Best validation loss: 0.8263808488845825
+Best validation loss: 0.8135082125663757
+Best validation loss: 0.7967709898948669
+Best validation loss: 0.8099217414855957
+Best validation loss: 0.7524182200431824
+Best validation loss: 0.8036206364631653
+Best validation loss: 0.826518714427948
+Best validation loss: 0.8117291331291199
+Best validation loss: 0.8023470044136047
+Best validation loss: 0.8058120608329773
+Best validation loss: 0.7726491689682007
+Best validation loss: 0.6320837736129761
+Best validation loss: 0.8267303705215454
+Best validation loss: 0.8221368789672852
+Best validation loss: 0.7939692735671997
+Best validation loss: 0.8112295866012573
+Best validation loss: 0.7995642423629761
+Best validation loss: 0.8059886693954468
+Best validation loss: 0.8262590169906616
+Best validation loss: 0.7998796701431274
+Best validation loss: 0.8035004734992981
+Best validation loss: 0.7992594838142395
+Best validation loss: 0.7969508767127991
+Best validation loss: 0.6173753142356873
+Best validation loss: 0.826090931892395
+Best validation loss: 0.7959418296813965
+Best validation loss: 0.800826907157898
+Best validation loss: 0.7978037595748901
+Best validation loss: 0.8003889918327332
+Best validation loss: 0.6714670062065125
+Best validation loss: 0.826268196105957
+Best validation loss: 0.798477053642273
+Best validation loss: 0.8032182455062866
+Best validation loss: 0.8050705790519714
+Best validation loss: 0.7986481189727783
+Best validation loss: 0.8022062182426453
+Best validation loss: 0.82610684633255
+Otimização finalizada. Melhores parâmetros: {'layers': 2, 'hidden': 128, 'dropout': 0, 'lr': 0.1}
+Métricas do modelo final - F1: 0.3553, Recall: 0.3438, Precision: 0.4448
+
+
+Explaining for 300 nodes, 0.3 edge density and 20 motifs
+
+Mean ROC AUC (explanation type phenomenon): 0.5000
+Mean F1 (explanation type phenomenon): 0.0000
+Mean Recall (explanation type phenomenon): 0.0000
+Mean Precision (explanation type phenomenon): 0.0000
+
+
+Explaining for 300 nodes, 0.3 edge density and 20 motifs
+
+Mean ROC AUC (explanation type model     ): 0.5000
+Mean F1 (explanation type model     ): 0.0000
+Mean Recall (explanation type model     ): 0.0000
+Mean Precision (explanation type model     ): 0.0000
+Explanation(edge_index=[2, 27230], y=[450], edge_mask=[27230], node_mask=[450], x=[450, 1])
+Best validation loss: 1.2894612550735474
+Best validation loss: 1.0406934022903442
+Best validation loss: 0.9830412864685059
+Best validation loss: 0.9767951965332031
+Best validation loss: 0.9468259811401367
+Best validation loss: 0.8289449214935303
+Best validation loss: 1.4472111463546753
+Best validation loss: 1.0029674768447876
+Best validation loss: 0.9681691527366638
+Best validation loss: 0.9846467971801758
+Best validation loss: 1.003198266029358
+Best validation loss: 0.8733236789703369
+Best validation loss: 1.5065605640411377
+Best validation loss: 0.9850512146949768
+Best validation loss: 0.9894314408302307
+Best validation loss: 0.9541592001914978
+Best validation loss: 0.9220380783081055
+Best validation loss: 0.8626222610473633
+Best validation loss: 2.000213146209717
+Best validation loss: 1.2362252473831177
+Best validation loss: 0.9633182883262634
+Best validation loss: 0.9763661623001099
+Best validation loss: 0.9872773289680481
+Best validation loss: 0.9779955744743347
+Best validation loss: 1.2761316299438477
+Best validation loss: 0.9692525267601013
+Best validation loss: 1.0360082387924194
+Best validation loss: 0.9179543256759644
+Best validation loss: 0.9980536699295044
+Best validation loss: 0.8395598530769348
+Best validation loss: 1.283393144607544
+Best validation loss: 1.0697747468948364
+Best validation loss: 0.9691188335418701
+Best validation loss: 0.9774627685546875
+Best validation loss: 0.998213529586792
+Best validation loss: 0.8324986100196838
+Best validation loss: 1.2657335996627808
+Best validation loss: 1.217268943786621
+Best validation loss: 0.9719902873039246
+Best validation loss: 0.9884309768676758
+Best validation loss: 0.979353666305542
+Best validation loss: 1.0071951150894165
+Best validation loss: 0.9728423357009888
+Best validation loss: 1.0826159715652466
+Best validation loss: 0.9691162705421448
+Best validation loss: 0.932249903678894
+Best validation loss: 0.9824352860450745
+Best validation loss: 0.9837732315063477
+Best validation loss: 1.8327127695083618
+Best validation loss: 1.0368014574050903
+Best validation loss: 0.9872565269470215
+Best validation loss: 0.9915305376052856
+Best validation loss: 0.9849755764007568
+Best validation loss: 0.9617139101028442
+Best validation loss: 1.2941784858703613
+Best validation loss: 0.9947423338890076
+Best validation loss: 0.983058750629425
+Best validation loss: 0.9754421710968018
+Best validation loss: 0.9802803993225098
+Best validation loss: 0.8483422994613647
+Best validation loss: 1.0047358274459839
+Best validation loss: 1.045084834098816
+Best validation loss: 0.9939292073249817
+Best validation loss: 0.9897488355636597
+Best validation loss: 0.981593668460846
+Best validation loss: 0.8633556962013245
+Best validation loss: 1.0099397897720337
+Best validation loss: 1.282344937324524
+Best validation loss: 0.9743574261665344
+Best validation loss: 0.9572175145149231
+Best validation loss: 0.9908084273338318
+Best validation loss: 0.8654916286468506
+Best validation loss: 1.128239393234253
+Best validation loss: 0.9596646428108215
+Best validation loss: 0.9533110857009888
+Best validation loss: 0.9645234942436218
+Best validation loss: 0.9719933271408081
+Best validation loss: 0.9881640672683716
+Best validation loss: 1.1176340579986572
+Best validation loss: 0.96230149269104
+Best validation loss: 0.9536158442497253
+Best validation loss: 0.9350728988647461
+Best validation loss: 0.8690234422683716
+Best validation loss: 0.9902229905128479
+Best validation loss: 0.9846610426902771
+Best validation loss: 0.9573560357093811
+Best validation loss: 0.959596574306488
+Best validation loss: 0.9311622381210327
+Best validation loss: 0.9585583806037903
+Best validation loss: 0.9895874857902527
+Best validation loss: 1.037060022354126
+Best validation loss: 0.9584222435951233
+Best validation loss: 0.9771612286567688
+Best validation loss: 0.9660611748695374
+Best validation loss: 0.7650594115257263
+Best validation loss: 0.991253137588501
+Best validation loss: 0.9685609340667725
+Best validation loss: 0.9585524797439575
+Best validation loss: 0.9603897333145142
+Best validation loss: 0.9580086469650269
+Best validation loss: 0.9668468832969666
+Best validation loss: 0.9903284907341003
+Best validation loss: 1.0461688041687012
+Best validation loss: 0.9538360834121704
+Best validation loss: 0.9601899981498718
+Best validation loss: 0.9179388284683228
+Best validation loss: 0.8762167096138
+Best validation loss: 0.9881553649902344
+Best validation loss: 0.9733610153198242
+Best validation loss: 0.9627044796943665
+Best validation loss: 0.9598565101623535
+Best validation loss: 0.8634563088417053
+Best validation loss: 0.7494984865188599
+Best validation loss: 0.9899632930755615
+Best validation loss: 0.9643468856811523
+Best validation loss: 0.9652527570724487
+Best validation loss: 0.9663529992103577
+Best validation loss: 0.9611067175865173
+Best validation loss: 0.9654597640037537
+Best validation loss: 0.9895758032798767
+Best validation loss: 0.9641870856285095
+Best validation loss: 0.9572156071662903
+Best validation loss: 0.9643722772598267
+Best validation loss: 0.8929704427719116
+Best validation loss: 0.871795117855072
+Best validation loss: 0.9897201657295227
+Best validation loss: 0.9589636325836182
+Best validation loss: 0.9605576992034912
+Best validation loss: 0.9599794745445251
+Best validation loss: 0.874110996723175
+Best validation loss: 0.7091200351715088
+Best validation loss: 0.989564836025238
+Best validation loss: 0.95924973487854
+Best validation loss: 0.9575214982032776
+Best validation loss: 0.9598202109336853
+Best validation loss: 0.8424866795539856
+Best validation loss: 0.7536317706108093
+Best validation loss: 0.9881995320320129
+Best validation loss: 0.9578737020492554
+Best validation loss: 0.96513831615448
+Best validation loss: 0.9466073513031006
+Best validation loss: 0.9609154462814331
+Best validation loss: 0.8335174322128296
+Best validation loss: 0.9897232055664062
+Otimização finalizada. Melhores parâmetros: {'layers': 2, 'hidden': 128, 'dropout': 0, 'lr': 0.1}
+Métricas do modelo final - F1: 0.3940, Recall: 0.3958, Precision: 0.4307
+
+
+Explaining for 300 nodes, 0.3 edge density and 30 motifs
+
+Mean ROC AUC (explanation type phenomenon): 0.5000
+Mean F1 (explanation type phenomenon): 0.0000
+Mean Recall (explanation type phenomenon): 0.0000
+Mean Precision (explanation type phenomenon): 0.0000
+
+
+Explaining for 300 nodes, 0.3 edge density and 30 motifs
+
+Mean ROC AUC (explanation type model     ): 0.5000
+Mean F1 (explanation type model     ): 0.0000
+Mean Recall (explanation type model     ): 0.0000
+Mean Precision (explanation type model     ): 0.0000
+Explanation(edge_index=[2, 53772], y=[400], edge_mask=[53772], node_mask=[400], x=[400, 1])
+Best validation loss: 1.083557367324829
+Best validation loss: 0.8585951924324036
+Best validation loss: 0.8286616206169128
+Best validation loss: 0.8192863464355469
+Best validation loss: 0.8252817392349243
+Best validation loss: 0.7245959639549255
+Best validation loss: 1.1382441520690918
+Best validation loss: 0.9899741411209106
+Best validation loss: 0.9123601913452148
+Best validation loss: 0.8160074353218079
+Best validation loss: 0.8251816034317017
+Best validation loss: 0.8389517068862915
+Best validation loss: 1.2214409112930298
+Best validation loss: 0.9030583500862122
+Best validation loss: 0.8377350568771362
+Best validation loss: 0.8166800737380981
+Best validation loss: 0.811034083366394
+Best validation loss: 0.7428143620491028
+Best validation loss: 1.218207597732544
+Best validation loss: 1.1479201316833496
+Best validation loss: 0.8128982782363892
+Best validation loss: 0.8071926236152649
+Best validation loss: 0.774785041809082
+Best validation loss: 0.7559013962745667
+Best validation loss: 1.287811517715454
+Best validation loss: 0.8327458500862122
+Best validation loss: 0.8324167132377625
+Best validation loss: 0.8268271684646606
+Best validation loss: 0.7960421442985535
+Best validation loss: 0.8912779092788696
+Best validation loss: 1.2709801197052002
+Best validation loss: 0.8111710548400879
+Best validation loss: 0.8207424879074097
+Best validation loss: 0.8207473754882812
+Best validation loss: 0.8599190711975098
+Best validation loss: 0.7369634509086609
+Best validation loss: 1.128960132598877
+Best validation loss: 0.8538881540298462
+Best validation loss: 0.8073707818984985
+Best validation loss: 0.8278287649154663
+Best validation loss: 0.8325416445732117
+Best validation loss: 0.8979716300964355
+Best validation loss: 1.0321922302246094
+Best validation loss: 1.0892783403396606
+Best validation loss: 0.8612738847732544
+Best validation loss: 0.8273129463195801
+Best validation loss: 0.8207370042800903
+Best validation loss: 0.8663204312324524
+Best validation loss: 0.962070643901825
+Best validation loss: 0.95783931016922
+Best validation loss: 0.8105052709579468
+Best validation loss: 0.8115986585617065
+Best validation loss: 0.8202622532844543
+Best validation loss: 0.7149553894996643
+Best validation loss: 0.9789543151855469
+Best validation loss: 0.9931033849716187
+Best validation loss: 0.815089225769043
+Best validation loss: 0.8197451829910278
+Best validation loss: 0.813890814781189
+Best validation loss: 0.8257242441177368
+Best validation loss: 0.9470902681350708
+Best validation loss: 1.0887515544891357
+Best validation loss: 0.8120018839836121
+Best validation loss: 0.8102556467056274
+Best validation loss: 0.821759045124054
+Best validation loss: 0.7276328802108765
+Best validation loss: 1.8428770303726196
+Best validation loss: 0.9716545939445496
+Best validation loss: 0.8099523782730103
+Best validation loss: 0.8157857656478882
+Best validation loss: 0.8252108693122864
+Best validation loss: 0.8532652854919434
+Best validation loss: 0.8993614912033081
+Best validation loss: 0.7964369654655457
+Best validation loss: 0.813119113445282
+Best validation loss: 0.7753649950027466
+Best validation loss: 0.8044707179069519
+Best validation loss: 0.8222705125808716
+Best validation loss: 1.112451434135437
+Best validation loss: 0.8110602498054504
+Best validation loss: 0.796310544013977
+Best validation loss: 0.8042179942131042
+Best validation loss: 0.8022032976150513
+Best validation loss: 0.826361358165741
+Best validation loss: 1.161535382270813
+Best validation loss: 0.7987530827522278
+Best validation loss: 0.7966071367263794
+Best validation loss: 0.7962449789047241
+Best validation loss: 0.8003061413764954
+Best validation loss: 0.8271135091781616
+Best validation loss: 0.9009377360343933
+Best validation loss: 0.7990928888320923
+Best validation loss: 0.7980511784553528
+Best validation loss: 0.7734841108322144
+Best validation loss: 0.8035051226615906
+Best validation loss: 0.8291624784469604
+Best validation loss: 0.8515907526016235
+Best validation loss: 0.8063399195671082
+Best validation loss: 0.8014334440231323
+Best validation loss: 0.7745339870452881
+Best validation loss: 0.7363423109054565
+Best validation loss: 0.8277727961540222
+Best validation loss: 0.8261072039604187
+Best validation loss: 0.7961588501930237
+Best validation loss: 0.8119951486587524
+Best validation loss: 0.7706353068351746
+Best validation loss: 0.8028168678283691
+Best validation loss: 0.8261195421218872
+Best validation loss: 0.86799556016922
+Best validation loss: 0.8138467669487
+Best validation loss: 0.809051513671875
+Best validation loss: 0.7579644918441772
+Best validation loss: 0.6869564056396484
+Best validation loss: 0.8266386985778809
+Best validation loss: 0.8763974905014038
+Best validation loss: 0.7952623963356018
+Best validation loss: 0.8178807497024536
+Best validation loss: 0.7996017932891846
+Best validation loss: 0.8036268949508667
+Best validation loss: 0.826797366142273
+Best validation loss: 0.8022987246513367
+Best validation loss: 0.7956622838973999
+Best validation loss: 0.8133949041366577
+Best validation loss: 0.8004444241523743
+Best validation loss: 0.8039862513542175
+Best validation loss: 0.8269689679145813
+Best validation loss: 0.803145706653595
+Best validation loss: 0.8075317144393921
+Best validation loss: 0.7971893548965454
+Best validation loss: 0.798737108707428
+Best validation loss: 0.6030027270317078
+Best validation loss: 0.826454758644104
+Best validation loss: 0.8034241795539856
+Best validation loss: 0.7982227802276611
+Best validation loss: 0.8066423535346985
+Best validation loss: 0.7998086214065552
+Best validation loss: 0.6360319256782532
+Best validation loss: 0.826151967048645
+Best validation loss: 0.8099600672721863
+Best validation loss: 0.8054311871528625
+Best validation loss: 0.8087989687919617
+Best validation loss: 0.8001704216003418
+Best validation loss: 0.7139711976051331
+Best validation loss: 0.8261833190917969
+Otimização finalizada. Melhores parâmetros: {'layers': 2, 'hidden': 128, 'dropout': 0, 'lr': 0.1}
+Métricas do modelo final - F1: 0.2714, Recall: 0.2812, Precision: 0.4399
+
+
+Explaining for 300 nodes, 0.6 edge density and 20 motifs
+
+Mean ROC AUC (explanation type phenomenon): 0.5000
+Mean F1 (explanation type phenomenon): 0.0000
+Mean Recall (explanation type phenomenon): 0.0000
+Mean Precision (explanation type phenomenon): 0.0000
+
+
+Explaining for 300 nodes, 0.6 edge density and 20 motifs
+
+Mean ROC AUC (explanation type model     ): 0.5000
+Mean F1 (explanation type model     ): 0.0000
+Mean Recall (explanation type model     ): 0.0000
+Mean Precision (explanation type model     ): 0.0000
+Explanation(edge_index=[2, 54314], y=[450], edge_mask=[54314], node_mask=[450], x=[450, 1])
+Best validation loss: 1.0876514911651611
+Best validation loss: 0.9623755812644958
+Best validation loss: 0.979456901550293
+Best validation loss: 0.973599910736084
+Best validation loss: 0.9057214260101318
+Best validation loss: 0.8279174566268921
+Best validation loss: 1.9087631702423096
+Best validation loss: 1.031442642211914
+Best validation loss: 0.9825252890586853
+Best validation loss: 0.998408317565918
+Best validation loss: 0.8688734173774719
+Best validation loss: 0.8617820739746094
+Best validation loss: 1.1728054285049438
+Best validation loss: 1.1991270780563354
+Best validation loss: 0.966540515422821
+Best validation loss: 0.9864969849586487
+Best validation loss: 0.97281813621521
+Best validation loss: 0.8177036046981812
+Best validation loss: 1.58482027053833
+Best validation loss: 0.9684018492698669
+Best validation loss: 0.9627918004989624
+Best validation loss: 0.9826977252960205
+Best validation loss: 0.9927268028259277
+Best validation loss: 1.0042058229446411
+Best validation loss: 1.4285845756530762
+Best validation loss: 0.9697157144546509
+Best validation loss: 0.9760521650314331
+Best validation loss: 0.9777317643165588
+Best validation loss: 0.9888589382171631
+Best validation loss: 0.9776231646537781
+Best validation loss: 1.908173680305481
+Best validation loss: 0.9947795271873474
+Best validation loss: 0.9587002992630005
+Best validation loss: 0.9950734376907349
+Best validation loss: 0.9861738681793213
+Best validation loss: 0.8344292640686035
+Best validation loss: 1.1320462226867676
+Best validation loss: 1.081642508506775
+Best validation loss: 0.9751439690589905
+Best validation loss: 0.9671577215194702
+Best validation loss: 0.9773489832878113
+Best validation loss: 0.8298587203025818
+Best validation loss: 1.7309104204177856
+Best validation loss: 0.9752845764160156
+Best validation loss: 0.9690366983413696
+Best validation loss: 1.0010987520217896
+Best validation loss: 0.9774618148803711
+Best validation loss: 0.8337424993515015
+Best validation loss: 1.2163995504379272
+Best validation loss: 0.9928338527679443
+Best validation loss: 0.9717662334442139
+Best validation loss: 0.9893290996551514
+Best validation loss: 1.0002861022949219
+Best validation loss: 0.8574987649917603
+Best validation loss: 1.900794506072998
+Best validation loss: 1.3025473356246948
+Best validation loss: 0.9648361802101135
+Best validation loss: 0.9771523475646973
+Best validation loss: 1.001307487487793
+Best validation loss: 0.8561865091323853
+Best validation loss: 1.307260513305664
+Best validation loss: 0.9835142493247986
+Best validation loss: 0.9649142026901245
+Best validation loss: 0.970345139503479
+Best validation loss: 0.9844546914100647
+Best validation loss: 0.7371938228607178
+Best validation loss: 1.1669929027557373
+Best validation loss: 1.0464234352111816
+Best validation loss: 0.9620439410209656
+Best validation loss: 0.9784006476402283
+Best validation loss: 0.9963222146034241
+Best validation loss: 0.8522176742553711
+Best validation loss: 1.035738468170166
+Best validation loss: 0.9525027871131897
+Best validation loss: 0.9655739068984985
+Best validation loss: 0.9252125024795532
+Best validation loss: 0.8219953775405884
+Best validation loss: 0.9893050193786621
+Best validation loss: 1.071293592453003
+Best validation loss: 0.9622822999954224
+Best validation loss: 0.9646608233451843
+Best validation loss: 0.9104554057121277
+Best validation loss: 0.9670572876930237
+Best validation loss: 0.9913225173950195
+Best validation loss: 1.0432124137878418
+Best validation loss: 0.9491749405860901
+Best validation loss: 0.9626938104629517
+Best validation loss: 0.8873031735420227
+Best validation loss: 0.9750121831893921
+Best validation loss: 0.9883036017417908
+Best validation loss: 1.0180354118347168
+Best validation loss: 0.9488314390182495
+Best validation loss: 0.9506476521492004
+Best validation loss: 0.7580885291099548
+Best validation loss: 0.8279070258140564
+Best validation loss: 0.9899246096611023
+Best validation loss: 0.9732919335365295
+Best validation loss: 0.9584600925445557
+Best validation loss: 0.9541930556297302
+Best validation loss: 0.9269623756408691
+Best validation loss: 0.8313831686973572
+Best validation loss: 0.9898035526275635
+Best validation loss: 1.1130799055099487
+Best validation loss: 0.9570624232292175
+Best validation loss: 0.9677845239639282
+Best validation loss: 0.9132359623908997
+Best validation loss: 0.9626254439353943
+Best validation loss: 0.9892014265060425
+Best validation loss: 0.9773848652839661
+Best validation loss: 0.9643495082855225
+Best validation loss: 0.9588340520858765
+Best validation loss: 0.8661671876907349
+Best validation loss: 0.6620385646820068
+Best validation loss: 0.9893312454223633
+Best validation loss: 0.9773397445678711
+Best validation loss: 0.9593839049339294
+Best validation loss: 0.9725478291511536
+Best validation loss: 0.8856426477432251
+Best validation loss: 0.7326377034187317
+Best validation loss: 0.9900211691856384
+Best validation loss: 0.9632014036178589
+Best validation loss: 0.9595017433166504
+Best validation loss: 0.9611645936965942
+Best validation loss: 0.9038447141647339
+Best validation loss: 0.8194128274917603
+Best validation loss: 0.9894200563430786
+Best validation loss: 0.9572573900222778
+Best validation loss: 0.9615801572799683
+Best validation loss: 0.958654522895813
+Best validation loss: 0.9589490294456482
+Best validation loss: 0.6588441729545593
+Best validation loss: 0.988155722618103
+Best validation loss: 0.9576119184494019
+Best validation loss: 0.968493640422821
+Best validation loss: 0.9601894021034241
+Best validation loss: 0.8398569822311401
+Best validation loss: 0.6912490129470825
+Best validation loss: 0.9887229800224304
+Best validation loss: 0.9558737874031067
+Best validation loss: 0.9515079259872437
+Best validation loss: 0.9587320685386658
+Best validation loss: 0.8644620180130005
+Best validation loss: 0.7450743913650513
+Best validation loss: 0.9891148209571838
+Otimização finalizada. Melhores parâmetros: {'layers': 2, 'hidden': 128, 'dropout': 0, 'lr': 0.1}
+Métricas do modelo final - F1: 0.3613, Recall: 0.3750, Precision: 0.3704
+
+
+Explaining for 300 nodes, 0.6 edge density and 30 motifs
+
+Mean ROC AUC (explanation type phenomenon): 0.5000
+Mean F1 (explanation type phenomenon): 0.0000
+Mean Recall (explanation type phenomenon): 0.0000
+Mean Precision (explanation type phenomenon): 0.0000
+
+
+Explaining for 300 nodes, 0.6 edge density and 30 motifs
+
+Mean ROC AUC (explanation type model     ): 0.5000
+Mean F1 (explanation type model     ): 0.0000
+Mean Recall (explanation type model     ): 0.0000
+Mean Precision (explanation type model     ): 0.0000
+Explanation(edge_index=[2, 81206], y=[400], edge_mask=[81206], node_mask=[400], x=[400, 1])
+Best validation loss: 1.1985070705413818
+Best validation loss: 1.0365270376205444
+Best validation loss: 0.8332832455635071
+Best validation loss: 0.8217664957046509
+Best validation loss: 0.8073909878730774
+Best validation loss: 0.9000937342643738
+Best validation loss: 1.708992600440979
+Best validation loss: 1.0096715688705444
+Best validation loss: 0.8107646703720093
+Best validation loss: 0.8054201006889343
+Best validation loss: 0.8250948190689087
+Best validation loss: 0.872000515460968
+Best validation loss: 1.1972386837005615
+Best validation loss: 1.157183051109314
+Best validation loss: 0.8380827903747559
+Best validation loss: 0.8095782399177551
+Best validation loss: 0.8314279317855835
+Best validation loss: 0.7250531315803528
+Best validation loss: 1.474491834640503
+Best validation loss: 0.9940322637557983
+Best validation loss: 0.8964542150497437
+Best validation loss: 0.8040722012519836
+Best validation loss: 0.826522707939148
+Best validation loss: 0.8736339807510376
+Best validation loss: 1.120065450668335
+Best validation loss: 1.1435067653656006
+Best validation loss: 0.7964659929275513
+Best validation loss: 0.8166264295578003
+Best validation loss: 0.8047239184379578
+Best validation loss: 0.8542911410331726
+Best validation loss: 1.5164750814437866
+Best validation loss: 0.9775465726852417
+Best validation loss: 0.8003813028335571
+Best validation loss: 0.8242348432540894
+Best validation loss: 0.8321401476860046
+Best validation loss: 0.8638895153999329
+Best validation loss: 1.2188118696212769
+Best validation loss: 1.0089898109436035
+Best validation loss: 0.8394775390625
+Best validation loss: 0.8169209361076355
+Best validation loss: 0.7923147082328796
+Best validation loss: 0.7069489359855652
+Best validation loss: 1.6191565990447998
+Best validation loss: 1.1323539018630981
+Best validation loss: 0.8020592927932739
+Best validation loss: 0.7628237009048462
+Best validation loss: 0.8341473340988159
+Best validation loss: 0.7063289880752563
+Best validation loss: 1.4247283935546875
+Best validation loss: 1.0342851877212524
+Best validation loss: 0.8250115513801575
+Best validation loss: 0.8335566520690918
+Best validation loss: 0.7852528095245361
+Best validation loss: 0.8389697074890137
+Best validation loss: 1.6811907291412354
+Best validation loss: 0.8636472821235657
+Best validation loss: 0.835862934589386
+Best validation loss: 0.8237187266349792
+Best validation loss: 0.8232327699661255
+Best validation loss: 0.7102311253547668
+Best validation loss: 1.7703195810317993
+Best validation loss: 1.2545832395553589
+Best validation loss: 0.8450093269348145
+Best validation loss: 0.8115169405937195
+Best validation loss: 0.852587103843689
+Best validation loss: 0.8707777261734009
+Best validation loss: 1.0469324588775635
+Best validation loss: 0.8381317853927612
+Best validation loss: 0.81560879945755
+Best validation loss: 0.804888129234314
+Best validation loss: 0.8262351751327515
+Best validation loss: 0.7006496787071228
+Best validation loss: 0.881989598274231
+Best validation loss: 0.7962328791618347
+Best validation loss: 0.7951346635818481
+Best validation loss: 0.8025433421134949
+Best validation loss: 0.798056960105896
+Best validation loss: 0.8292301297187805
+Best validation loss: 0.9487091302871704
+Best validation loss: 0.7924090623855591
+Best validation loss: 0.7983937859535217
+Best validation loss: 0.8001015782356262
+Best validation loss: 0.8028391003608704
+Best validation loss: 0.8291346430778503
+Best validation loss: 0.8729230165481567
+Best validation loss: 0.7925021052360535
+Best validation loss: 0.8027607798576355
+Best validation loss: 0.7967119812965393
+Best validation loss: 0.7996779680252075
+Best validation loss: 0.8291099667549133
+Best validation loss: 0.895520031452179
+Best validation loss: 0.7991882562637329
+Best validation loss: 0.7886269092559814
+Best validation loss: 0.7295287847518921
+Best validation loss: 0.7990185022354126
+Best validation loss: 0.8290475606918335
+Best validation loss: 0.9182976484298706
+Best validation loss: 0.7909458875656128
+Best validation loss: 0.8082543611526489
+Best validation loss: 0.7617733478546143
+Best validation loss: 0.797110915184021
+Best validation loss: 0.8263869285583496
+Best validation loss: 0.8903530240058899
+Best validation loss: 0.7958781719207764
+Best validation loss: 0.7939971685409546
+Best validation loss: 0.7925328612327576
+Best validation loss: 0.8044360876083374
+Best validation loss: 0.8292276263237
+Best validation loss: 0.7952706217765808
+Best validation loss: 0.798460841178894
+Best validation loss: 0.8020282983779907
+Best validation loss: 0.794231116771698
+Best validation loss: 0.5911470651626587
+Best validation loss: 0.8269364237785339
+Best validation loss: 0.8100204467773438
+Best validation loss: 0.8048235177993774
+Best validation loss: 0.8004439473152161
+Best validation loss: 0.7634630799293518
+Best validation loss: 0.7988848686218262
+Best validation loss: 0.8263295292854309
+Best validation loss: 0.8172284364700317
+Best validation loss: 0.7998614311218262
+Best validation loss: 0.7962253093719482
+Best validation loss: 0.736288845539093
+Best validation loss: 0.6842431426048279
+Best validation loss: 0.8263736963272095
+Best validation loss: 0.793976902961731
+Best validation loss: 0.8028051257133484
+Best validation loss: 0.7931802868843079
+Best validation loss: 0.7933412194252014
+Best validation loss: 0.5615686178207397
+Best validation loss: 0.8262662887573242
+Best validation loss: 0.793160617351532
+Best validation loss: 0.8081239461898804
+Best validation loss: 0.8026555180549622
+Best validation loss: 0.7445985078811646
+Best validation loss: 0.7941063642501831
+Best validation loss: 0.8261561393737793
+Best validation loss: 0.7936620116233826
+Best validation loss: 0.8063324689865112
+Best validation loss: 0.7994428277015686
+Best validation loss: 0.7957472205162048
+Best validation loss: 0.7949879169464111
+Best validation loss: 0.8260983228683472
+Otimização finalizada. Melhores parâmetros: {'layers': 2, 'hidden': 128, 'dropout': 0, 'lr': 0.1}
+Métricas do modelo final - F1: 0.4145, Recall: 0.4062, Precision: 0.4500
+
+
+Explaining for 300 nodes, 0.9 edge density and 20 motifs
+
+Mean ROC AUC (explanation type phenomenon): 0.9165
+Mean F1 (explanation type phenomenon): 0.8933
+Mean Recall (explanation type phenomenon): 0.8281
+Mean Precision (explanation type phenomenon): 0.9695
+
+
+Explaining for 300 nodes, 0.9 edge density and 20 motifs
+
+Mean ROC AUC (explanation type model     ): 0.9159
+Mean F1 (explanation type model     ): 0.0000
+Mean Recall (explanation type model     ): 0.0000
+Mean Precision (explanation type model     ): 0.0000
+Explanation(edge_index=[2, 80862], y=[450], edge_mask=[80862], node_mask=[450], x=[450, 1])
+Best validation loss: 1.526472806930542
+Best validation loss: 0.9745258092880249
+Best validation loss: 0.994525134563446
+Best validation loss: 0.9174222946166992
+Best validation loss: 0.9024468064308167
+Best validation loss: 0.7706917524337769
+Best validation loss: 1.1845616102218628
+Best validation loss: 0.9618443250656128
+Best validation loss: 0.9602962136268616
+Best validation loss: 0.9721489548683167
+Best validation loss: 0.976202666759491
+Best validation loss: 1.039663314819336
+Best validation loss: 1.1952942609786987
+Best validation loss: 1.1247243881225586
+Best validation loss: 1.0357747077941895
+Best validation loss: 0.9694424867630005
+Best validation loss: 0.9923733472824097
+Best validation loss: 0.830104410648346
+Best validation loss: 1.3569190502166748
+Best validation loss: 1.057901382446289
+Best validation loss: 0.9768465757369995
+Best validation loss: 0.9759149551391602
+Best validation loss: 0.9726914167404175
+Best validation loss: 0.808536171913147
+Best validation loss: 1.2642040252685547
+Best validation loss: 0.9747627973556519
+Best validation loss: 0.9739602208137512
+Best validation loss: 0.9711665511131287
+Best validation loss: 0.9721434116363525
+Best validation loss: 0.8624366521835327
+Best validation loss: 1.4948946237564087
+Best validation loss: 0.9980169534683228
+Best validation loss: 0.9760828018188477
+Best validation loss: 0.9816251397132874
+Best validation loss: 0.9849829077720642
+Best validation loss: 0.8547427654266357
+Best validation loss: 1.2395222187042236
+Best validation loss: 1.2258343696594238
+Best validation loss: 0.9776060581207275
+Best validation loss: 0.9867648482322693
+Best validation loss: 0.9828782677650452
+Best validation loss: 0.8105390667915344
+Best validation loss: 1.2947349548339844
+Best validation loss: 1.0366648435592651
+Best validation loss: 0.9595019221305847
+Best validation loss: 0.9837033748626709
+Best validation loss: 0.9997116327285767
+Best validation loss: 1.0762532949447632
+Best validation loss: 1.2041327953338623
+Best validation loss: 1.1048036813735962
+Best validation loss: 0.9700934290885925
+Best validation loss: 0.9745453000068665
+Best validation loss: 1.0083625316619873
+Best validation loss: 0.8586590886116028
+Best validation loss: 1.0136497020721436
+Best validation loss: 1.2345428466796875
+Best validation loss: 0.9625416398048401
+Best validation loss: 0.9735643267631531
+Best validation loss: 0.9798057675361633
+Best validation loss: 0.9940474033355713
+Best validation loss: 1.4815675020217896
+Best validation loss: 0.9980418086051941
+Best validation loss: 0.9740476608276367
+Best validation loss: 0.9953318238258362
+Best validation loss: 0.9963511824607849
+Best validation loss: 0.8629475235939026
+Best validation loss: 1.1003880500793457
+Best validation loss: 1.0169264078140259
+Best validation loss: 0.9625086188316345
+Best validation loss: 0.9726004600524902
+Best validation loss: 0.9867637753486633
+Best validation loss: 1.019686222076416
+Best validation loss: 1.1892614364624023
+Best validation loss: 0.9517936110496521
+Best validation loss: 0.9613683819770813
+Best validation loss: 0.9076912999153137
+Best validation loss: 0.8902607560157776
+Best validation loss: 0.9899023175239563
+Best validation loss: 1.2041587829589844
+Best validation loss: 0.9608046412467957
+Best validation loss: 0.956219494342804
+Best validation loss: 0.9703079462051392
+Best validation loss: 0.8464857935905457
+Best validation loss: 0.9882140159606934
+Best validation loss: 1.0789320468902588
+Best validation loss: 0.9573370814323425
+Best validation loss: 0.9542269110679626
+Best validation loss: 0.973529040813446
+Best validation loss: 0.9693256616592407
+Best validation loss: 0.9893244504928589
+Best validation loss: 0.9995378851890564
+Best validation loss: 0.9565404057502747
+Best validation loss: 0.9450782537460327
+Best validation loss: 0.9659405946731567
+Best validation loss: 0.7961206436157227
+Best validation loss: 0.9906351566314697
+Best validation loss: 0.9688798785209656
+Best validation loss: 0.9586251974105835
+Best validation loss: 0.9602683782577515
+Best validation loss: 0.893088698387146
+Best validation loss: 0.9654330611228943
+Best validation loss: 0.9898474812507629
+Best validation loss: 1.0108089447021484
+Best validation loss: 0.9559646844863892
+Best validation loss: 0.9569575190544128
+Best validation loss: 0.9058291912078857
+Best validation loss: 0.8494511842727661
+Best validation loss: 0.9897853136062622
+Best validation loss: 0.967366635799408
+Best validation loss: 0.9626145958900452
+Best validation loss: 0.9624351263046265
+Best validation loss: 0.8458443284034729
+Best validation loss: 0.8124417662620544
+Best validation loss: 0.9894734621047974
+Best validation loss: 0.9838016033172607
+Best validation loss: 0.9475976824760437
+Best validation loss: 0.9732087850570679
+Best validation loss: 0.874512255191803
+Best validation loss: 0.7415715456008911
+Best validation loss: 0.9902728796005249
+Best validation loss: 0.9594814777374268
+Best validation loss: 0.9641816020011902
+Best validation loss: 0.9588685631752014
+Best validation loss: 0.8848424553871155
+Best validation loss: 0.770432710647583
+Best validation loss: 0.9896062016487122
+Best validation loss: 0.9577293395996094
+Best validation loss: 0.9646327495574951
+Best validation loss: 0.9385737180709839
+Best validation loss: 0.841227114200592
+Best validation loss: 0.7013297080993652
+Best validation loss: 0.9895262718200684
+Best validation loss: 0.9551156759262085
+Best validation loss: 0.9570684432983398
+Best validation loss: 0.9578258991241455
+Best validation loss: 0.8087854981422424
+Best validation loss: 0.96219801902771
+Best validation loss: 0.9894770979881287
+Best validation loss: 0.9566847681999207
+Best validation loss: 0.9593402147293091
+Best validation loss: 0.9589197039604187
+Best validation loss: 0.8791620135307312
+Best validation loss: 0.791363537311554
+Best validation loss: 0.9895216822624207
+Otimização finalizada. Melhores parâmetros: {'layers': 2, 'hidden': 128, 'dropout': 0, 'lr': 0.1}
+Métricas do modelo final - F1: 0.3305, Recall: 0.3333, Precision: 0.4244
+
+
+Explaining for 300 nodes, 0.9 edge density and 30 motifs
+
+Mean ROC AUC (explanation type phenomenon): 0.5000
+Mean F1 (explanation type phenomenon): 0.0000
+Mean Recall (explanation type phenomenon): 0.0000
+Mean Precision (explanation type phenomenon): 0.0000
+
+
+Explaining for 300 nodes, 0.9 edge density and 30 motifs
+
+Mean ROC AUC (explanation type model     ): 0.5000
+Mean F1 (explanation type model     ): 0.0000
+Mean Recall (explanation type model     ): 0.0000
+Mean Precision (explanation type model     ): 0.0000
+Explanation(edge_index=[2, 74778], y=[600], edge_mask=[74778], node_mask=[600], x=[600, 1])
+Best validation loss: 0.8897688388824463
+Best validation loss: 0.6313570737838745
+Best validation loss: 0.6225394010543823
+Best validation loss: 0.6058443784713745
+Best validation loss: 0.6186791658401489
+Best validation loss: 0.5548931360244751
+Best validation loss: 1.6813602447509766
+Best validation loss: 0.7006645798683167
+Best validation loss: 0.7457130551338196
+Best validation loss: 0.6117337346076965
+Best validation loss: 0.6208099722862244
+Best validation loss: 0.6291319727897644
+Best validation loss: 1.209053635597229
+Best validation loss: 0.7909477353096008
+Best validation loss: 0.699023425579071
+Best validation loss: 0.6166325211524963
+Best validation loss: 0.6363366842269897
+Best validation loss: 0.5403317809104919
+Best validation loss: 1.141937494277954
+Best validation loss: 0.6117953062057495
+Best validation loss: 0.6223309636116028
+Best validation loss: 0.6268142461776733
+Best validation loss: 0.6233208775520325
+Best validation loss: 0.6331483721733093
+Best validation loss: 1.0602614879608154
+Best validation loss: 0.8571293354034424
+Best validation loss: 0.6777223348617554
+Best validation loss: 0.6216532588005066
+Best validation loss: 0.6319743394851685
+Best validation loss: 0.6631962656974792
+Best validation loss: 1.3771175146102905
+Best validation loss: 0.8526808619499207
+Best validation loss: 0.6429632902145386
+Best validation loss: 0.6433815360069275
+Best validation loss: 0.6201270222663879
+Best validation loss: 0.64606773853302
+Best validation loss: 1.1499862670898438
+Best validation loss: 0.6983638405799866
+Best validation loss: 0.6139582395553589
+Best validation loss: 0.6213365197181702
+Best validation loss: 0.6198357939720154
+Best validation loss: 0.6623243689537048
+Best validation loss: 1.5060914754867554
+Best validation loss: 0.7880163788795471
+Best validation loss: 0.7164350748062134
+Best validation loss: 0.6151468753814697
+Best validation loss: 0.6236855983734131
+Best validation loss: 0.6647754907608032
+Best validation loss: 1.390352725982666
+Best validation loss: 0.915005087852478
+Best validation loss: 0.6558405160903931
+Best validation loss: 0.6350876688957214
+Best validation loss: 0.6292628645896912
+Best validation loss: 0.6454422473907471
+Best validation loss: 0.7351281642913818
+Best validation loss: 0.8911321759223938
+Best validation loss: 0.6265762448310852
+Best validation loss: 0.6286979913711548
+Best validation loss: 0.6183055639266968
+Best validation loss: 0.5636979341506958
+Best validation loss: 1.4681510925292969
+Best validation loss: 0.711980402469635
+Best validation loss: 0.627040445804596
+Best validation loss: 0.6191481947898865
+Best validation loss: 0.6465216279029846
+Best validation loss: 0.6464642286300659
+Best validation loss: 0.9697090983390808
+Best validation loss: 0.9025957584381104
+Best validation loss: 0.6252660155296326
+Best validation loss: 0.6120155453681946
+Best validation loss: 0.618061900138855
+Best validation loss: 0.6694656610488892
+Best validation loss: 1.0203421115875244
+Best validation loss: 0.5991775989532471
+Best validation loss: 0.6146019697189331
+Best validation loss: 0.6023120880126953
+Best validation loss: 0.608810305595398
+Best validation loss: 0.6282825469970703
+Best validation loss: 0.6470963954925537
+Best validation loss: 0.6068306565284729
+Best validation loss: 0.6107500791549683
+Best validation loss: 0.6025627851486206
+Best validation loss: 0.6068208813667297
+Best validation loss: 0.6214017868041992
+Best validation loss: 0.9400058388710022
+Best validation loss: 0.5996958613395691
+Best validation loss: 0.6002028584480286
+Best validation loss: 0.6149514317512512
+Best validation loss: 0.6022090911865234
+Best validation loss: 0.625644862651825
+Best validation loss: 0.7733891606330872
+Best validation loss: 0.5978492498397827
+Best validation loss: 0.6071264743804932
+Best validation loss: 0.6086703538894653
+Best validation loss: 0.6013118028640747
+Best validation loss: 0.6254304051399231
+Best validation loss: 0.8234167098999023
+Best validation loss: 0.59843510389328
+Best validation loss: 0.6226312518119812
+Best validation loss: 0.6022819876670837
+Best validation loss: 0.6053307056427002
+Best validation loss: 0.6312879920005798
+Best validation loss: 0.6473335027694702
+Best validation loss: 0.5983951687812805
+Best validation loss: 0.6116722226142883
+Best validation loss: 0.6018940806388855
+Best validation loss: 0.6077336072921753
+Best validation loss: 0.6281267404556274
+Best validation loss: 0.6210817694664001
+Best validation loss: 0.6128915548324585
+Best validation loss: 0.6041337847709656
+Best validation loss: 0.60069340467453
+Best validation loss: 0.6005384922027588
+Best validation loss: 0.6252018213272095
+Best validation loss: 0.660453736782074
+Best validation loss: 0.6085443496704102
+Best validation loss: 0.606421172618866
+Best validation loss: 0.6011048555374146
+Best validation loss: 0.6011461019515991
+Best validation loss: 0.6229086518287659
+Best validation loss: 0.6301551461219788
+Best validation loss: 0.6026797890663147
+Best validation loss: 0.6061801910400391
+Best validation loss: 0.6007339954376221
+Best validation loss: 0.6024926900863647
+Best validation loss: 0.627533495426178
+Best validation loss: 0.6056329607963562
+Best validation loss: 0.6148118376731873
+Best validation loss: 0.6052239537239075
+Best validation loss: 0.5981643199920654
+Best validation loss: 0.5047613978385925
+Best validation loss: 0.6270226240158081
+Best validation loss: 0.6063657999038696
+Best validation loss: 0.607073187828064
+Best validation loss: 0.6075032353401184
+Best validation loss: 0.600718080997467
+Best validation loss: 0.5380906462669373
+Best validation loss: 0.6284188032150269
+Best validation loss: 0.602853536605835
+Best validation loss: 0.6018022298812866
+Best validation loss: 0.6030870079994202
+Best validation loss: 0.6002712249755859
+Best validation loss: 0.543819785118103
+Best validation loss: 0.6299037337303162
+Otimização finalizada. Melhores parâmetros: {'layers': 2, 'hidden': 128, 'dropout': 0, 'lr': 0.1}
+Métricas do modelo final - F1: 0.2273, Recall: 0.2500, Precision: 0.2083
+
+
+Explaining for 500 nodes, 0.3 edge density and 20 motifs
+
+Mean ROC AUC (explanation type phenomenon): 0.5000
+Mean F1 (explanation type phenomenon): 0.0000
+Mean Recall (explanation type phenomenon): 0.0000
+Mean Precision (explanation type phenomenon): 0.0000
+
+
+Explaining for 500 nodes, 0.3 edge density and 20 motifs
+
+Mean ROC AUC (explanation type model     ): 0.5000
+Mean F1 (explanation type model     ): 0.0000
+Mean Recall (explanation type model     ): 0.0000
+Mean Precision (explanation type model     ): 0.0000
+Explanation(edge_index=[2, 74798], y=[650], edge_mask=[74798], node_mask=[650], x=[650, 1])
+Best validation loss: 1.8106350898742676
+Best validation loss: 1.1542810201644897
+Best validation loss: 0.7864127159118652
+Best validation loss: 0.775722086429596
+Best validation loss: 0.805391252040863
+Best validation loss: 0.8035945296287537
+Best validation loss: 0.9127984642982483
+Best validation loss: 0.9782982468605042
+Best validation loss: 0.7835893630981445
+Best validation loss: 0.7872301936149597
+Best validation loss: 0.776080310344696
+Best validation loss: 0.8477503657341003
+Best validation loss: 1.883685827255249
+Best validation loss: 0.7964969277381897
+Best validation loss: 0.7700554728507996
+Best validation loss: 0.7670603394508362
+Best validation loss: 0.7756133079528809
+Best validation loss: 0.8402465581893921
+Best validation loss: 2.113736391067505
+Best validation loss: 0.9694631099700928
+Best validation loss: 0.8283108472824097
+Best validation loss: 0.7823414206504822
+Best validation loss: 0.7853069305419922
+Best validation loss: 0.7856783866882324
+Best validation loss: 0.9155855178833008
+Best validation loss: 0.8485885858535767
+Best validation loss: 0.7870302796363831
+Best validation loss: 0.7781652212142944
+Best validation loss: 0.7875170111656189
+Best validation loss: 0.7135306000709534
+Best validation loss: 0.7913526296615601
+Best validation loss: 0.8205422759056091
+Best validation loss: 0.8116772770881653
+Best validation loss: 0.7664957046508789
+Best validation loss: 0.7717170715332031
+Best validation loss: 0.6950752139091492
+Best validation loss: 0.8914197087287903
+Best validation loss: 0.8132749199867249
+Best validation loss: 0.8099547624588013
+Best validation loss: 0.7753363847732544
+Best validation loss: 0.7814210057258606
+Best validation loss: 0.7905632853507996
+Best validation loss: 1.6223537921905518
+Best validation loss: 0.8114303350448608
+Best validation loss: 0.7582759261131287
+Best validation loss: 0.7777658104896545
+Best validation loss: 0.7715091109275818
+Best validation loss: 0.7036793828010559
+Best validation loss: 2.227219343185425
+Best validation loss: 0.8144367933273315
+Best validation loss: 0.7834811210632324
+Best validation loss: 0.7700912356376648
+Best validation loss: 0.7855258584022522
+Best validation loss: 0.8148549199104309
+Best validation loss: 0.9401591420173645
+Best validation loss: 0.7865932583808899
+Best validation loss: 0.8316736817359924
+Best validation loss: 0.7709770202636719
+Best validation loss: 0.7827240228652954
+Best validation loss: 0.7114061713218689
+Best validation loss: 1.8080209493637085
+Best validation loss: 1.3990551233291626
+Best validation loss: 0.823497474193573
+Best validation loss: 0.7384147644042969
+Best validation loss: 0.780888020992279
+Best validation loss: 0.8248937726020813
+Best validation loss: 0.798345148563385
+Best validation loss: 1.1009260416030884
+Best validation loss: 0.818464994430542
+Best validation loss: 0.7625693082809448
+Best validation loss: 0.7851750254631042
+Best validation loss: 0.6945499181747437
+Best validation loss: 0.8962293863296509
+Best validation loss: 0.7537297010421753
+Best validation loss: 0.7676926255226135
+Best validation loss: 0.7604731321334839
+Best validation loss: 0.7606103420257568
+Best validation loss: 0.7805850505828857
+Best validation loss: 1.1704351902008057
+Best validation loss: 0.7585016489028931
+Best validation loss: 0.7607716917991638
+Best validation loss: 0.7606700658798218
+Best validation loss: 0.7620959877967834
+Best validation loss: 0.7852703332901001
+Best validation loss: 0.8237729668617249
+Best validation loss: 0.7549474239349365
+Best validation loss: 0.7516372203826904
+Best validation loss: 0.7463222146034241
+Best validation loss: 0.7393943667411804
+Best validation loss: 0.7865353226661682
+Best validation loss: 0.8530417084693909
+Best validation loss: 0.7577796578407288
+Best validation loss: 0.7602995038032532
+Best validation loss: 0.734321117401123
+Best validation loss: 0.7599166631698608
+Best validation loss: 0.7837949395179749
+Best validation loss: 0.8378919363021851
+Best validation loss: 0.753936767578125
+Best validation loss: 0.7611685991287231
+Best validation loss: 0.7340771555900574
+Best validation loss: 0.7650958895683289
+Best validation loss: 0.7851325869560242
+Best validation loss: 0.8961551189422607
+Best validation loss: 0.7551430463790894
+Best validation loss: 0.757418155670166
+Best validation loss: 0.7443379759788513
+Best validation loss: 0.7160743474960327
+Best validation loss: 0.7831674814224243
+Best validation loss: 0.806956946849823
+Best validation loss: 0.7551377415657043
+Best validation loss: 0.7624051570892334
+Best validation loss: 0.7307800650596619
+Best validation loss: 0.7600398659706116
+Best validation loss: 0.7839921712875366
+Best validation loss: 0.7577528953552246
+Best validation loss: 0.7685039639472961
+Best validation loss: 0.756275475025177
+Best validation loss: 0.739333987236023
+Best validation loss: 0.6301395297050476
+Best validation loss: 0.7839816212654114
+Best validation loss: 0.8026039600372314
+Best validation loss: 0.7543212175369263
+Best validation loss: 0.7578608989715576
+Best validation loss: 0.756910502910614
+Best validation loss: 0.7613247036933899
+Best validation loss: 0.7839229106903076
+Best validation loss: 0.7719961404800415
+Best validation loss: 0.7648372650146484
+Best validation loss: 0.7676069736480713
+Best validation loss: 0.7567543983459473
+Best validation loss: 0.7596500515937805
+Best validation loss: 0.7853472232818604
+Best validation loss: 0.7559350728988647
+Best validation loss: 0.7611643075942993
+Best validation loss: 0.761111319065094
+Best validation loss: 0.7568898797035217
+Best validation loss: 0.7588086724281311
+Best validation loss: 0.7842965722084045
+Best validation loss: 0.7621791362762451
+Best validation loss: 0.7635445594787598
+Best validation loss: 0.7630351781845093
+Best validation loss: 0.7573260068893433
+Best validation loss: 0.7571441531181335
+Best validation loss: 0.784551203250885
+Otimização finalizada. Melhores parâmetros: {'layers': 2, 'hidden': 64, 'dropout': 0.25, 'lr': 0.1}
+Métricas do modelo final - F1: 0.2174, Recall: 0.2500, Precision: 0.1923
+
+
+Explaining for 500 nodes, 0.3 edge density and 30 motifs
+
+Mean ROC AUC (explanation type phenomenon): 0.5345
+Mean F1 (explanation type phenomenon): 0.3422
+Mean Recall (explanation type phenomenon): 0.2089
+Mean Precision (explanation type phenomenon): 0.9455
+
+
+Explaining for 500 nodes, 0.3 edge density and 30 motifs
+
+Mean ROC AUC (explanation type model     ): 0.5309
+Mean F1 (explanation type model     ): 0.3143
+Mean Recall (explanation type model     ): 0.1891
+Mean Precision (explanation type model     ): 0.9303
+Explanation(edge_index=[2, 150226], y=[600], edge_mask=[150226], node_mask=[600], x=[600, 1])
+Best validation loss: 1.4257978200912476
+Best validation loss: 0.7081471085548401
+Best validation loss: 0.6191439032554626
+Best validation loss: 0.6197506785392761
+Best validation loss: 0.6063991189002991
+Best validation loss: 0.6154612898826599
+Best validation loss: 0.9787301421165466
+Best validation loss: 0.9405974745750427
+Best validation loss: 0.6333927512168884
+Best validation loss: 0.6258487701416016
+Best validation loss: 0.6437920331954956
+Best validation loss: 0.6325196623802185
+Best validation loss: 0.9040341973304749
+Best validation loss: 0.6665531992912292
+Best validation loss: 0.7071325182914734
+Best validation loss: 0.6251025795936584
+Best validation loss: 0.6335906982421875
+Best validation loss: 0.6274765729904175
+Best validation loss: 1.6848167181015015
+Best validation loss: 1.001770257949829
+Best validation loss: 0.6264084577560425
+Best validation loss: 0.6236212253570557
+Best validation loss: 0.6049301624298096
+Best validation loss: 0.6449624300003052
+Best validation loss: 0.9911325573921204
+Best validation loss: 1.2154966592788696
+Best validation loss: 0.6238346099853516
+Best validation loss: 0.6282685995101929
+Best validation loss: 0.6427657008171082
+Best validation loss: 0.6847295165061951
+Best validation loss: 1.295350193977356
+Best validation loss: 0.8583015203475952
+Best validation loss: 0.6162818670272827
+Best validation loss: 0.6199266910552979
+Best validation loss: 0.6537129282951355
+Best validation loss: 0.6305076479911804
+Best validation loss: 1.642615556716919
+Best validation loss: 0.7785703539848328
+Best validation loss: 0.6222419738769531
+Best validation loss: 0.6234689950942993
+Best validation loss: 0.6360613107681274
+Best validation loss: 0.6309657692909241
+Best validation loss: 1.662341594696045
+Best validation loss: 0.6307697296142578
+Best validation loss: 0.6218670010566711
+Best validation loss: 0.6153000593185425
+Best validation loss: 0.6248233318328857
+Best validation loss: 0.6456243395805359
+Best validation loss: 1.0531222820281982
+Best validation loss: 0.8522307276725769
+Best validation loss: 0.7243196368217468
+Best validation loss: 0.6211641430854797
+Best validation loss: 0.6176546812057495
+Best validation loss: 0.56082683801651
+Best validation loss: 1.463975429534912
+Best validation loss: 1.0672510862350464
+Best validation loss: 0.6955900192260742
+Best validation loss: 0.5977292656898499
+Best validation loss: 0.6278497576713562
+Best validation loss: 0.6865078806877136
+Best validation loss: 2.2415270805358887
+Best validation loss: 0.9443028569221497
+Best validation loss: 0.6375528573989868
+Best validation loss: 0.6332494020462036
+Best validation loss: 0.6268603205680847
+Best validation loss: 0.6580584645271301
+Best validation loss: 1.0974222421646118
+Best validation loss: 0.8420000672340393
+Best validation loss: 0.6503667235374451
+Best validation loss: 0.6196368336677551
+Best validation loss: 0.6041563749313354
+Best validation loss: 0.6135485768318176
+Best validation loss: 0.7714089155197144
+Best validation loss: 0.6063410043716431
+Best validation loss: 0.6107691526412964
+Best validation loss: 0.6094814538955688
+Best validation loss: 0.6102584004402161
+Best validation loss: 0.6292778253555298
+Best validation loss: 0.730076253414154
+Best validation loss: 0.6062008142471313
+Best validation loss: 0.6165958642959595
+Best validation loss: 0.6180311441421509
+Best validation loss: 0.6060009598731995
+Best validation loss: 0.6238710880279541
+Best validation loss: 0.7849132418632507
+Best validation loss: 0.6058686375617981
+Best validation loss: 0.6057039499282837
+Best validation loss: 0.6152569055557251
+Best validation loss: 0.6102661490440369
+Best validation loss: 0.621590256690979
+Best validation loss: 0.6544658541679382
+Best validation loss: 0.6097151637077332
+Best validation loss: 0.6272818446159363
+Best validation loss: 0.5929358601570129
+Best validation loss: 0.5795009732246399
+Best validation loss: 0.6219416856765747
+Best validation loss: 0.727645754814148
+Best validation loss: 0.6071349382400513
+Best validation loss: 0.6208570003509521
+Best validation loss: 0.608954131603241
+Best validation loss: 0.6128772497177124
+Best validation loss: 0.6271989941596985
+Best validation loss: 0.7961671352386475
+Best validation loss: 0.6107084155082703
+Best validation loss: 0.6135918498039246
+Best validation loss: 0.6095021963119507
+Best validation loss: 0.5822422504425049
+Best validation loss: 0.6250603795051575
+Best validation loss: 0.6594392657279968
+Best validation loss: 0.6133407354354858
+Best validation loss: 0.6196284890174866
+Best validation loss: 0.5883266925811768
+Best validation loss: 0.5159422755241394
+Best validation loss: 0.6272062659263611
+Best validation loss: 0.6553036570549011
+Best validation loss: 0.6043165326118469
+Best validation loss: 0.609327495098114
+Best validation loss: 0.6060193181037903
+Best validation loss: 0.6112813353538513
+Best validation loss: 0.6270615458488464
+Best validation loss: 0.632789671421051
+Best validation loss: 0.6078070402145386
+Best validation loss: 0.6095893383026123
+Best validation loss: 0.6072571277618408
+Best validation loss: 0.5818241238594055
+Best validation loss: 0.6243822574615479
+Best validation loss: 0.6208271384239197
+Best validation loss: 0.609416127204895
+Best validation loss: 0.6062119007110596
+Best validation loss: 0.5808705687522888
+Best validation loss: 0.6076881289482117
+Best validation loss: 0.6264094710350037
+Best validation loss: 0.6079118251800537
+Best validation loss: 0.6130269765853882
+Best validation loss: 0.6115285158157349
+Best validation loss: 0.6104908585548401
+Best validation loss: 0.6084593534469604
+Best validation loss: 0.6316109299659729
+Best validation loss: 0.6122412085533142
+Best validation loss: 0.6125985980033875
+Best validation loss: 0.6119945645332336
+Best validation loss: 0.6077620983123779
+Best validation loss: 0.6110209822654724
+Best validation loss: 0.6258355379104614
+Otimização finalizada. Melhores parâmetros: {'layers': 2, 'hidden': 64, 'dropout': 0, 'lr': 0.1}
+Métricas do modelo final - F1: 0.2273, Recall: 0.2500, Precision: 0.2083
+
+
+Explaining for 500 nodes, 0.6 edge density and 20 motifs
+
+Mean ROC AUC (explanation type phenomenon): 0.5000
+Mean F1 (explanation type phenomenon): 0.0000
+Mean Recall (explanation type phenomenon): 0.0000
+Mean Precision (explanation type phenomenon): 0.0000
+
+
+Explaining for 500 nodes, 0.6 edge density and 20 motifs
+
+Mean ROC AUC (explanation type model     ): 0.5000
+Mean F1 (explanation type model     ): 0.0000
+Mean Recall (explanation type model     ): 0.0000
+Mean Precision (explanation type model     ): 0.0000
+Explanation(edge_index=[2, 149254], y=[650], edge_mask=[149254], node_mask=[650], x=[650, 1])
+Best validation loss: 1.9734926223754883
+Best validation loss: 0.8846178650856018
+Best validation loss: 0.7855732440948486
+Best validation loss: 0.7754068970680237
+Best validation loss: 0.7794359922409058
+Best validation loss: 0.7030388116836548
+Best validation loss: 1.0317234992980957
+Best validation loss: 0.8295004367828369
+Best validation loss: 0.7708689570426941
+Best validation loss: 0.7857417464256287
+Best validation loss: 0.7793038487434387
+Best validation loss: 0.7098575830459595
+Best validation loss: 1.391151785850525
+Best validation loss: 1.031840205192566
+Best validation loss: 0.7857000231742859
+Best validation loss: 0.7752981781959534
+Best validation loss: 0.7933681011199951
+Best validation loss: 0.7668169736862183
+Best validation loss: 0.8702597618103027
+Best validation loss: 0.7698871493339539
+Best validation loss: 0.7854273319244385
+Best validation loss: 0.7750155925750732
+Best validation loss: 0.7768677473068237
+Best validation loss: 0.838135302066803
+Best validation loss: 1.7371506690979004
+Best validation loss: 1.097213864326477
+Best validation loss: 0.7722276449203491
+Best validation loss: 0.7817003726959229
+Best validation loss: 0.781875491142273
+Best validation loss: 0.8080326914787292
+Best validation loss: 0.9995154738426208
+Best validation loss: 0.9328615069389343
+Best validation loss: 0.7794749140739441
+Best validation loss: 0.7755405902862549
+Best validation loss: 0.798535943031311
+Best validation loss: 0.6608990430831909
+Best validation loss: 2.267327308654785
+Best validation loss: 0.8650709390640259
+Best validation loss: 0.7680778503417969
+Best validation loss: 0.7701447606086731
+Best validation loss: 0.7806718349456787
+Best validation loss: 0.7711765170097351
+Best validation loss: 1.239702582359314
+Best validation loss: 1.225442886352539
+Best validation loss: 0.7684966921806335
+Best validation loss: 0.7746672034263611
+Best validation loss: 0.8025609850883484
+Best validation loss: 0.8512084484100342
+Best validation loss: 1.535718321800232
+Best validation loss: 0.8218668699264526
+Best validation loss: 0.7826525568962097
+Best validation loss: 0.7801544666290283
+Best validation loss: 0.7833311557769775
+Best validation loss: 0.8255940675735474
+Best validation loss: 1.2255159616470337
+Best validation loss: 0.9585147500038147
+Best validation loss: 0.7714353203773499
+Best validation loss: 0.7687928080558777
+Best validation loss: 0.7816363573074341
+Best validation loss: 0.8373358845710754
+Best validation loss: 1.033306360244751
+Best validation loss: 0.7779502272605896
+Best validation loss: 0.7874006032943726
+Best validation loss: 0.7812148332595825
+Best validation loss: 0.7985827922821045
+Best validation loss: 0.8654594421386719
+Best validation loss: 1.8474984169006348
+Best validation loss: 0.8779102563858032
+Best validation loss: 0.7703075408935547
+Best validation loss: 0.7735639214515686
+Best validation loss: 0.7334885597229004
+Best validation loss: 0.6962581276893616
+Best validation loss: 0.8228959441184998
+Best validation loss: 0.7594547271728516
+Best validation loss: 0.761831521987915
+Best validation loss: 0.7680701613426208
+Best validation loss: 0.7047115564346313
+Best validation loss: 0.7841169834136963
+Best validation loss: 0.8611876368522644
+Best validation loss: 0.7624630331993103
+Best validation loss: 0.7576509118080139
+Best validation loss: 0.7445548176765442
+Best validation loss: 0.7644554972648621
+Best validation loss: 0.7750691771507263
+Best validation loss: 1.0907272100448608
+Best validation loss: 0.759909987449646
+Best validation loss: 0.7655411958694458
+Best validation loss: 0.7633457779884338
+Best validation loss: 0.747830331325531
+Best validation loss: 0.783703625202179
+Best validation loss: 0.8083506226539612
+Best validation loss: 0.7596340179443359
+Best validation loss: 0.7774471044540405
+Best validation loss: 0.7358525991439819
+Best validation loss: 0.7004609704017639
+Best validation loss: 0.7860611081123352
+Best validation loss: 0.7661082148551941
+Best validation loss: 0.7567054033279419
+Best validation loss: 0.7805842757225037
+Best validation loss: 0.7590633630752563

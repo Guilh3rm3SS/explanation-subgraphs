@@ -1,0 +1,44 @@
+Explanation(edge_index=[2, 27618], y=[400], edge_mask=[27618], node_mask=[400], x=[400, 1])
+Iniciando treinamento...
+Melhor perda de validação: 1.2588
+Acurácia final no teste: 0.7500
+
+
+Explaining for 300 nodes, 0.3 edge density and 20 motifs
+
+Mean ROC AUC (explanation type phenomenon): 0.9505
+Mean F1 (explanation type phenomenon): 0.0305
+Mean Recall (explanation type phenomenon): 0.0156
+Mean Precision (explanation type phenomenon): 0.6000
+
+
+Explaining for 300 nodes, 0.3 edge density and 20 motifs
+
+Mean ROC AUC (explanation type model     ): 0.9999
+Mean F1 (explanation type model     ): 0.9722
+Mean Recall (explanation type model     ): 1.0000
+Mean Precision (explanation type model     ): 0.9458
+Explanation(edge_index=[2, 27516], y=[450], edge_mask=[27516], node_mask=[450], x=[450, 1])
+Iniciando treinamento...
+Melhor perda de validação: 1.5454
+Acurácia final no teste: 0.6667
+
+
+Explaining for 300 nodes, 0.3 edge density and 30 motifs
+
+Mean ROC AUC (explanation type phenomenon): 0.9197
+Mean F1 (explanation type phenomenon): 0.3913
+Mean Recall (explanation type phenomenon): 0.2500
+Mean Precision (explanation type phenomenon): 0.9000
+
+
+Explaining for 300 nodes, 0.3 edge density and 30 motifs
+
+Mean ROC AUC (explanation type model     ): 1.0000
+Mean F1 (explanation type model     ): 0.9774
+Mean Recall (explanation type model     ): 1.0000
+Mean Precision (explanation type model     ): 0.9558
+Explanation(edge_index=[2, 54214], y=[400], edge_mask=[54214], node_mask=[400], x=[400, 1])
+Iniciando treinamento...
+Melhor perda de validação: 1.0807
+Acurácia final no teste: 0.7500

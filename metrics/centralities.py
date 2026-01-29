@@ -1,7 +1,7 @@
 import networkx as nx
 from torch_geometric.utils import to_networkx
 
-def to_networkx_fixed(data, to_undirected=True):
+def to_networkx_fixed(data, to_undirected=False):
     if hasattr(data, "node_idx_original"):
         mapping = data.node_idx_original.tolist()
     else:

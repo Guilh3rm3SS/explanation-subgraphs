@@ -2,50 +2,54 @@ import pandas as pd
 import os
 from dataset_loader.load_dataset import load_dataset
 from torch_geometric.datasets import TUDataset
+from torch_geometric.explain.metric import groundtruth_metrics
 from model.gcn import GCN
+from model.trainer import optimize_hyperparameters, train_one_model, get_model_checkpoint, save_model_checkpoint
 from explainer.gnn_explainer_wrapper import get_explainer
 from explainer.subgraphx_wrapper import SubgraphXExplainer
 from explainer.subgraph_utils import get_khop_subgraph
 from explainer.importance_filters import filtered_node_importance
-from torch_geometric.explain.metric import fidelity, characterization_score
+from metrics.fidelity import get_fidelity_metrics
 from metrics.centralities import get_centralities
 from metrics.correlations import get_correlation_centralities, get_mutual_information_centralities
 import torch.nn.functional as F
 import torch
 
 # ========= Load Dataset =========
-# names: PubMed, CiteSeer, KarateClub, Mutag, Cora
-dataset_name = "CiteSeer"
+# names: PubMed, CiteSeer, KarateClub, Mutag, Cora, synthetic
+dataset_name = "synthetic"
 dataset, data = load_dataset(dataset_name)
 
+node_mask_type = "attributes"
 target = None
-explanation_type = "phenomenon"
+explanation_type = "model"
 if explanation_type == "phenomenon":
     target = data.y
 
+# Model type: gcn or gatconv
+model_type = "gcn"
+
 # ========= Build & train model =========
-model = GCN(dataset)
-optimizer = None
+model, model_params = get_model_checkpoint(model_type, dataset_name, data.num_features, dataset.num_classes) if dataset_name != "synthetic" else (None, None)
 
-# Quick training
-
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-model = model.to(device)
-data = data.to(device)
-
-optimizer = torch.optim.Adam(model.parameters(), lr=0.01, weight_decay=5e-4)
-
-print("Training model...", flush=True)
-for i in range(200):
-    model.train()
-    optimizer.zero_grad()
-    out = model(data.x, data.edge_index)
-    loss = F.nll_loss(out[data.train_mask], data.y[data.train_mask])
-    loss.backward()
-    optimizer.step()
+if model is None:
+    print("Checkpoint não encontrado. Treinando modelo com melhores parâmetros...", flush=True)
+    model, model_params = optimize_hyperparameters(data, dataset, model_type)
+    save_model_checkpoint(model, model_type, model_params, dataset_name) if dataset_name != "synthetic" else None
+else:
+    print(f"Checkpoint encontrado para {model_type} no dataset {dataset_name}.", flush=True)
+# model, loss = train_one_model(    data, 
+#                             num_features=dataset.num_features, 
+#                             num_classes=dataset.num_classes, 
+#                             hidden_channels=32, 
+#                             num_layers=3, 
+#                             dropout=0.25, 
+#                             epochs=200, 
+#                             lr=0.1, 
+#                             patience=10)
 
 # ========= Global Explanation =========
-print("\nGenerating explanations...", flush=True)
+print("\nGerando explicações...", flush=True)
 
 results = {}
 subgraph = data
@@ -65,21 +69,54 @@ def calculate_metrics(explanation, centralities, subgraph, results, prefix):
 
 # 1. GNNExplainer
 gnn_explainer_explanation = None
-gnn_explainer_characterization_score = 0
-gnn_explainer_fidelity = (0, 0)
-for i in range(5):
-    print(f"Running GNNExplainer {i+1}...", flush=True)
-    gnn_explainer = get_explainer(model, data, algorithm="gnnexplainer", explanation_type=explanation_type, epochs=200, lr=0.1)
+gnn_explainer_fidelity_metrics = None
+gnn_explainer_characterization_score = -1
+gnn_explainer_epochs = 500
+gnn_explainer_lr = 0.1
+for i in range(1):
+    print(f"Rodando GNNExplainer {i+1}...", flush=True)
+    gnn_explainer = get_explainer(  model,
+                                    data,
+                                    algorithm="gnnexplainer", 
+                                    explanation_type=explanation_type, 
+                                    epochs=gnn_explainer_epochs, 
+                                    lr=gnn_explainer_lr, 
+                                    node_mask_type=node_mask_type, 
+                                    num_layers=model_params['layers'])
+
     it_explanation = gnn_explainer(data.x, data.edge_index, index=None, target=target)
     
-    it_fidelity = fidelity(gnn_explainer, it_explanation)
-    it_characterization_score = characterization_score(it_fidelity[0], it_fidelity[1])
-    print("GNNExplainer fidelity:", it_fidelity)
-    print("GNNExplainer characterization score:", it_characterization_score)
-    if it_characterization_score > gnn_explainer_characterization_score:
-        gnn_explainer_characterization_score = it_characterization_score
-        gnn_explainer_fidelity = it_fidelity
+    metrics = get_fidelity_metrics(it_explanation, gnn_explainer)
+    
+    print("Métricas do GNNExplainer:", metrics)
+    
+    if metrics["characterization_score"] > gnn_explainer_characterization_score:
+        gnn_explainer_characterization_score = metrics["characterization_score"]
+        gnn_explainer_fidelity_metrics = metrics
         gnn_explainer_explanation = it_explanation
+
+# ========= Ground Truth Comparison =========
+if dataset_name == "synthetic" and gnn_explainer_explanation is not None:
+    print("Calculando métricas de Ground Truth...", flush=True)
+    
+    # Se a máscara for de atributos (node_mask_type="attributes"), 
+    # precisamos reduzir para nível de nó para comparar com o Ground Truth
+    node_mask = gnn_explainer_explanation.node_mask
+    if node_mask is not None and node_mask.dim() > 1:
+        node_mask = node_mask.mean(dim=-1)
+    
+    gt_metrics = groundtruth_metrics(node_mask, data.node_mask)
+    print("Métricas de Ground Truth:", gt_metrics)
+    
+    # groundtruth_metrics retorna (accuracy, recall, precision, f1, auc)
+    acc, recall, prec, f1, auc = gt_metrics
+    results["gnn_gt_accuracy"] = acc
+    results["gnn_gt_recall"] = recall
+    results["gnn_gt_precision"] = prec
+    results["gnn_gt_f1"] = f1
+    results["gnn_gt_auc"] = auc
+else:
+    gt_metrics = None
 
 calculate_metrics(gnn_explainer_explanation, centralities, subgraph, results, "gnn")
 
@@ -121,7 +158,7 @@ calculate_metrics(gnn_explainer_explanation, centralities, subgraph, results, "g
 
 # Save results
 df = pd.DataFrame(results).T
-print("\n📊 Correlations & MI:", flush=True)
+print("\n📊 Correlações & MI:", flush=True)
 print(df.round(4), flush=True)
 
 results_base_folder = f"results/{dataset_name}"
@@ -145,6 +182,16 @@ df.to_csv(file_path, index=True)
 print("Salvo em:", file_path)
 
 with open(f"{run_folder_path}/fidelity.txt", "w") as f:
-    print(f"positive fidelity: {gnn_explainer_fidelity[0]}", file=f)
-    print(f"negative fidelity: {gnn_explainer_fidelity[1]}", file=f)
-    print(f"characterization score: {gnn_explainer_characterization_score}", file=f)
+    if gnn_explainer_fidelity_metrics:
+        for key, value in gnn_explainer_fidelity_metrics.items():
+            print(f"{key}: {value}", file=f)
+    # if gt_metrics:
+    #     print("\n--- Ground Truth Metrics ---", file=f)
+    #     for key, value in gt_metrics.items():
+    #         print(f"{key}: {value}", file=f)
+with open(f"{run_folder_path}/parameters.txt", "w") as f:
+    print(f"epochs: {gnn_explainer_epochs}", file=f)
+    print(f"lr: {gnn_explainer_lr}", file=f)
+    print(f"explanation_type: {explanation_type}", file=f)
+    print(f"model_type: {model_type}", file=f)
+    print(f"model_params: {model_params}", file=f)

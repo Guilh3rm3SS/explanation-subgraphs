@@ -5,7 +5,7 @@ from captum.attr import IntegratedGradients
 
 def get_explainer(model, data, node_index=None,
                          epochs=200, lr=0.01,
-                         node_mask_type="attributes",
+                         node_mask_type="object",
                          edge_mask_type="object",
                          num_layers=2,
                          explanation_type="model",
