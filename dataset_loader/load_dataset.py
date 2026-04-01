@@ -3,6 +3,7 @@ import torch
 from torch_geometric.datasets import KarateClub, Planetoid, TUDataset, ExplainerDataset
 from torch_geometric.datasets.graph_generator import BAGraph
 from torch_geometric.datasets.motif_generator import HouseMotif, CycleMotif
+from graphxai.datasets import ShapeGGen
 
 def load_dataset(choice="KarateClub"):
     if choice == "Cora":
@@ -29,6 +30,25 @@ def load_dataset(choice="KarateClub"):
     # Dataset artificial com ground truth explanation masks
     elif choice == "synthetic":
         dataset, data = synthetic_dataset()
+    elif choice == "shapeggen":
+        dataset = ShapeGGen(
+            model_layers=2,
+            num_subgraphs=10,
+            subgraph_size=15,
+            prob_connection=0.8,
+            add_sensitive_feature=True,
+            n_features=10,
+            n_informative_features=3,
+            seed=42,
+            class_sep=1.0
+        )
+        dataset.num_classes = 2
+        data = dataset.get_graph(use_fixed_split=True)
+        # add_sensitive_feature adds an extra dimension to x
+        dataset.num_features = data.x.shape[1]
+        data.val_mask = data.valid_mask
+        # print(data.shape.to('cpu').numpy())
+        # print(data.y.to('cpu').numpy())
 
     return dataset, data.to(torch.device("cuda" if torch.cuda.is_available() else "cpu"))
 

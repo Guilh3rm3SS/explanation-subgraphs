@@ -20,7 +20,7 @@ def get_centralities(data):
         "degree": nx.degree_centrality(G),
         "in_degree": nx.in_degree_centrality(G),
         "out_degree": nx.out_degree_centrality(G),
-        "eigenvector": nx.eigenvector_centrality(G, weight="weight"),
+        "eigenvector": nx.eigenvector_centrality(G, weight="weight", max_iter=1000),
         "pagerank": nx.pagerank(G, weight="weight"),
     }
 

@@ -6,7 +6,7 @@ from sklearn.metrics import f1_score, recall_score, precision_score
 import copy
 from model.gcn import GCN
 
-def train_one_model(data, num_features, num_classes, hidden_channels, num_layers, dropout, epochs=200, lr=0.1, patience=10):
+def train_one_model(data, num_features, num_classes, hidden_channels, num_layers, dropout, epochs=500, lr=0.1, patience=10):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = GCN(num_features, num_classes, hidden_channels, num_layers, dropout).to(device)
     data = data.to(device)
@@ -31,7 +31,7 @@ def train_one_model(data, num_features, num_classes, hidden_channels, num_layers
         model.eval()
         with torch.no_grad():
             out = model(data.x, data.edge_index)
-            val_loss = F.nll_loss(out[data.val_mask], data.y[data.val_mask])
+            val_loss = F.cross_entropy(out[data.val_mask], data.y[data.val_mask])
             
         if val_loss < best_val_loss:
             best_val_loss = val_loss
@@ -64,7 +64,7 @@ def train_gatv2conv_model(data, num_features, num_classes, hidden_channels, num_
         model.train()
         optimizer.zero_grad()
         out = model(data.x, data.edge_index)
-        loss = F.nll_loss(out[data.train_mask], data.y[data.train_mask])
+        loss = F.cross_entropy(out[data.train_mask], data.y[data.train_mask])
         loss.backward()
         optimizer.step()
         scheduler.step()
@@ -73,7 +73,7 @@ def train_gatv2conv_model(data, num_features, num_classes, hidden_channels, num_
         model.eval()
         with torch.no_grad():
             out = model(data.x, data.edge_index)
-            val_loss = F.nll_loss(out[data.val_mask], data.y[data.val_mask])
+            val_loss = F.cross_entropy(out[data.val_mask], data.y[data.val_mask])
             
         if val_loss < best_val_loss:
             best_val_loss = val_loss
@@ -111,17 +111,18 @@ def optimize_hyperparameters(data, dataset, model_type="gcn"):
     # Otimização finalizada. Melhores parâmetros: {'layers': 2, 'hidden': 32, 'dropout': 0.25, 'lr': 0.05}
     # Métricas do modelo final - F1: 0.8057, Recall: 0.8276, Precision: 0.7913
 
+    #  {'layers': 2, 'hidden': 32, 'dropout': 0, 'lr': 0.05}
 
 
     embeddings = [16, 32, 64, 128]
     dropouts = [0, 0.25, 0.5]
-    layers = [1, 2]
-    lrs = [0.001, 0.005, 0.01, 0.05, 0.1, 0.5]
+    layers = [2]
+    # lrs = [0.001, 0.005, 0.01, 0.05, 0.1, 0.5]
+    lrs = [0.05]
 
     # embeddings = [32]
     # dropouts = [0.25]
     # layers = [2]
-    # lrs = [0.05]
     
     best_overall_val_loss = float('inf')
     best_params = {}

@@ -1,0 +1,24 @@
+--- PGExplainer ---
+Classification Metrics:
+F1: 0.6804
+AUC: 0.8306
+Precision: 0.7021
+Recall: 0.6600
+
+Pearson Correlation with Centralities:
+closeness: 0.8214 (p=0.0000)
+betweenness: 0.6973 (p=0.0000)
+degree: 0.6495 (p=0.0000)
+in_degree: 0.6495 (p=0.0000)
+out_degree: 0.6495 (p=0.0000)
+eigenvector: 0.6416 (p=0.0000)
+pagerank: 0.6287 (p=0.0000)
+
+Mutual Information with Centralities:
+closeness: 1.1482
+betweenness: 0.6014
+degree: 0.4952
+in_degree: 0.4478
+out_degree: 0.4816
+eigenvector: 0.8423
+pagerank: 0.7963
