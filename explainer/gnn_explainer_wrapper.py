@@ -46,7 +46,7 @@ def get_explainer(model, data, node_index=None,
         model_config=dict(
             mode='multiclass_classification',
             task_level=task_level,
-            return_type='raw',
+            return_type='log_probs',
         )
     )
 

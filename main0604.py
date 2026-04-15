@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-from dataset_loader.load_dataset import load_dataset
+from dataset_loader.load_dataset import load_dataset, filter_explanation_by_mask
 from torch_geometric.datasets import TUDataset
 from torch_geometric.explain.metric import groundtruth_metrics
 from model.gcn import GCN
@@ -61,7 +61,10 @@ else:
 def visualize_subgraph(subgraph_data, target_index, node_importance, title, filename, threshold=0.1):
     # Print nodes and edges
     print(f"\n--- {title} ---")
-    nodes = subgraph_data.node_idx_original.tolist()
+    if hasattr(subgraph_data, 'node_idx_original'):
+        nodes = subgraph_data.node_idx_original.tolist()
+    else:
+        nodes = list(range(subgraph_data.num_nodes))
     print(f"Nodes ({len(nodes)}): {nodes}")
     
     # Get edges
@@ -81,13 +84,15 @@ def visualize_subgraph(subgraph_data, target_index, node_importance, title, file
     pos = nx.spring_layout(G, seed=42)
     
     node_colors = []
-    for node in nodes:
+    for i, node in enumerate(nodes):
         if node == target_index:
             node_colors.append('yellow')
-        elif node_importance[node] > threshold:
-            node_colors.append('red')
         else:
-            node_colors.append('lightblue')
+            val = node_importance[i] if len(node_importance) == len(nodes) else node_importance[node]
+            if val > threshold:
+                node_colors.append('red')
+            else:
+                node_colors.append('lightblue')
             
     plt.figure(figsize=(8, 6))
     nx.draw(G, pos, with_labels=True, node_color=node_colors, node_size=500, font_weight='bold')
@@ -100,8 +105,11 @@ def visualize_subgraph(subgraph_data, target_index, node_importance, title, file
 print("\nGerando explicações...", flush=True)
 
 results = {}
-subgraph = data
-centralities = get_centralities(subgraph)
+test_indices = data.test_mask.nonzero(as_tuple=True)[0]
+data_test = data
+# centralities = get_centralities(data_test)
+if index == 0 and len(test_indices) > 0:
+    index = test_indices[0].item()
 
 def calculate_metrics(explanation, centralities, subgraph, results, prefix):
     node_imp = filtered_node_importance(explanation, subgraph)
@@ -122,7 +130,8 @@ gnn_explainer_gt_metrics = None
 gnn_explainer_characterization_score = -1
 gnn_explainer_epochs = 500
 gnn_explainer_lr = 0.01
-shape_vector = (data.shape > 0).int() if getattr(data, "shape", None) is not None else None
+shape_vector = (data_test.shape > 0).int() if getattr(data_test, "shape", None) is not None else None
+
 for i in range(1):
     print(f"Rodando GNNExplainer {i+1}...", flush=True)
     gnn_explainer = get_explainer(  model,
@@ -135,7 +144,7 @@ for i in range(1):
                                     edge_mask_type=edge_mask_type,
                                     num_layers=model_params['layers'])
 
-    it_explanation = gnn_explainer(data.x, data.edge_index, index=index, target=target)
+    it_explanation = gnn_explainer(data_test.x, data_test.edge_index, index=index, target=target)
     metrics = get_fidelity_metrics(it_explanation, gnn_explainer)
     
     # print("Métricas do GNNExplainer:", metrics)
@@ -151,39 +160,37 @@ print("Melhor GNNExplainer:", gnn_explainer_fidelity_metrics)
 # print(gnn_explainer_explanation.node_mask.flatten())
 # print("Melhor GNNExplainer GT:", gnn_explainer_gt_metrics)
 
-prediction_vector = gnn_explainer_explanation.node_mask.flatten().detach().cpu()
-prediction_vector = (prediction_vector > 0).float().numpy()
+node_mask = gnn_explainer_explanation.node_mask
+if node_mask is not None and node_mask.dim() > 1:
+    node_mask = node_mask.mean(dim=-1)
+prediction_vector = node_mask.detach().cpu()
+prediction_vector_np = (prediction_vector).float().numpy()
 shape_vector_np = shape_vector.detach().cpu().numpy()
-# print(prediction_vector)
-# print(shape_vector_np)
+visual_graph = data_test
 
 if index is not None:
-    gt_subgraph = get_khop_subgraph(data, index, num_hops=model_params['layers'], relabel_nodes=False)
-    # print(gt_subgraph.node_idx_original)
-    #subgraph = gnn_explainer_explanation.get_explanation_subgraph()
+    gt_subgraph = get_khop_subgraph(data_test, index, num_hops=model_params['layers'], relabel_nodes=False)
+    prediction_vector_np = prediction_vector_np[gt_subgraph.node_idx_original]
+    print(prediction_vector_np)
 
-    prediction_vector_sub = prediction_vector[gt_subgraph.node_idx_original]
-    shape_vector_sub = shape_vector_np[gt_subgraph.node_idx_original]
+    shape_vector_np = shape_vector_np[gt_subgraph.node_idx_original]
+    visual_graph = gt_subgraph
 
-
-    print(prediction_vector_sub)
-    print(shape_vector_sub)
-
-    gnn_explainer_gt_metrics = groundtruth_metrics(
-        torch.tensor(prediction_vector_sub), 
-        torch.tensor(shape_vector_sub)
-    )
-    print(gnn_explainer_gt_metrics)
+gnn_explainer_gt_metrics = groundtruth_metrics(
+    torch.tensor(prediction_vector_np), 
+    torch.tensor(shape_vector_np)
+)
+print("Métricas de Ground Truth:", gnn_explainer_gt_metrics)
 
     # Visualization
-    visualize_subgraph(gt_subgraph, index, shape_vector_np, "Ground Truth Subgraph", "gt_subgraph.png", threshold=0.0)
-    visualize_subgraph(gt_subgraph, index, prediction_vector, "Explanation Subgraph", "expl_subgraph.png", threshold=0.1)
+visualize_subgraph(visual_graph, index, shape_vector_np, "Ground Truth Subgraph", "gt_subgraph.png", threshold=0.0)
+visualize_subgraph(visual_graph, index, prediction_vector_np, "Explanation Subgraph", "expl_subgraph.png", threshold=0.01)
 
-    print("Quantidade de nós importantes preditos no subgrafo:", prediction_vector_sub.sum())
-    print("Quantidade de nós importantes no subgrafo real:", shape_vector_sub.sum())
+    # print("Quantidade de nós importantes preditos no subgrafo:", prediction_vector_sub.sum())
+    # print("Quantidade de nós importantes no subgrafo real:", shape_vector_sub.sum())
 
-    print("proporção de nós importantes preditos no subgrafo:", prediction_vector_sub.sum() / len(shape_vector_sub))
-    print("proporção de nós importantes no subgrafo real:", shape_vector_sub.sum() / len(shape_vector_sub))
+    # print("proporção de nós importantes preditos no subgrafo:", prediction_vector_sub.sum() / len(shape_vector_sub))
+    # print("proporção de nós importantes no subgrafo real:", shape_vector_sub.sum() / len(shape_vector_sub))
 
 
 

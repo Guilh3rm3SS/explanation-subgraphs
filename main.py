@@ -1,7 +1,8 @@
 import pandas as pd
 import os
-from dataset_loader.load_dataset import load_dataset
+from dataset_loader.load_dataset import load_dataset, filter_explanation_by_mask
 from torch_geometric.datasets import TUDataset
+from torch_geometric.data import Data
 from torch_geometric.explain.metric import groundtruth_metrics
 from model.gcn import GCN
 from model.trainer import optimize_hyperparameters, train_one_model, get_model_checkpoint, save_model_checkpoint
@@ -16,21 +17,25 @@ import torch.nn.functional as F
 import torch
 
 # ========= Load Dataset =========
-# names: PubMed, CiteSeer, KarateClub, Mutag, Cora, synthetic
-dataset_name = "synthetic"
+# names: PubMed, CiteSeer, KarateClub, Mutag, Cora, synthetic, shapeggen
+dataset_name = "shapeggen"
 dataset, data = load_dataset(dataset_name)
+print(data)
 
 node_mask_type = "attributes"
 target = None
 explanation_type = "model"
 if explanation_type == "phenomenon":
     target = data.y
+index = 0
 
 # Model type: gcn or gatconv
 model_type = "gcn"
 
 # ========= Build & train model =========
-model, model_params = get_model_checkpoint(model_type, dataset_name, data.num_features, dataset.num_classes) if dataset_name != "synthetic" else (None, None)
+# model, model_params = get_model_checkpoint(model_type, dataset_name, data.num_features, dataset.num_classes) if dataset_name != "synthetic" else (None, None)
+model, model_params = None, None
+
 
 if model is None:
     print("Checkpoint não encontrado. Treinando modelo com melhores parâmetros...", flush=True)
@@ -52,8 +57,9 @@ else:
 print("\nGerando explicações...", flush=True)
 
 results = {}
-subgraph = data
-centralities = get_centralities(subgraph)
+subgraph = filter_explanation_by_mask(data, data.test_mask)
+print(subgraph)
+# centralities = get_centralities(subgraph)
 
 def calculate_metrics(explanation, centralities, subgraph, results, prefix):
     node_imp = filtered_node_importance(explanation, subgraph)
@@ -84,7 +90,7 @@ for i in range(1):
                                     node_mask_type=node_mask_type, 
                                     num_layers=model_params['layers'])
 
-    it_explanation = gnn_explainer(data.x, data.edge_index, index=None, target=target)
+    it_explanation = gnn_explainer(subgraph.x, subgraph.edge_index, index=None, target=target)
     
     metrics = get_fidelity_metrics(it_explanation, gnn_explainer)
     
@@ -96,29 +102,32 @@ for i in range(1):
         gnn_explainer_explanation = it_explanation
 
 # ========= Ground Truth Comparison =========
-if dataset_name == "synthetic" and gnn_explainer_explanation is not None:
+if dataset_name == "shapeggen" and gnn_explainer_explanation is not None:
     print("Calculando métricas de Ground Truth...", flush=True)
     
     # Se a máscara for de atributos (node_mask_type="attributes"), 
     # precisamos reduzir para nível de nó para comparar com o Ground Truth
-    node_mask = gnn_explainer_explanation.node_mask
-    if node_mask is not None and node_mask.dim() > 1:
-        node_mask = node_mask.mean(dim=-1)
+    explanation_node_mask = gnn_explainer_explanation.node_mask
+    gt_node_mask = subgraph.shape
+    if explanation_node_mask is not None and explanation_node_mask.dim() > 1:
+        explanation_node_mask = explanation_node_mask.mean(dim=-1)
     
-    gt_metrics = groundtruth_metrics(node_mask, data.node_mask)
+    gt_metrics = groundtruth_metrics(explanation_node_mask, gt_node_mask)
     print("Métricas de Ground Truth:", gt_metrics)
     
     # groundtruth_metrics retorna (accuracy, recall, precision, f1, auc)
-    acc, recall, prec, f1, auc = gt_metrics
+    acc, recall, prec, f1, auc, jaccard = gt_metrics
     results["gnn_gt_accuracy"] = acc
     results["gnn_gt_recall"] = recall
     results["gnn_gt_precision"] = prec
     results["gnn_gt_f1"] = f1
     results["gnn_gt_auc"] = auc
+    results["gnn_gt_jaccard"] = jaccard
 else:
     gt_metrics = None
 
-calculate_metrics(gnn_explainer_explanation, centralities, subgraph, results, "gnn")
+
+# calculate_metrics(gnn_explainer_explanation, centralities, subgraph, results, "gnn")
 
 # 2. PGExplainer
 # print("Running PGExplainer...", flush=True)
@@ -157,41 +166,41 @@ calculate_metrics(gnn_explainer_explanation, centralities, subgraph, results, "g
 # PGexplainer
 
 # Save results
-df = pd.DataFrame(results).T
-print("\n📊 Correlações & MI:", flush=True)
-print(df.round(4), flush=True)
+# df = pd.DataFrame(results).T
+# print("\n📊 Correlações & MI:", flush=True)
+# print(df.round(4), flush=True)
 
-results_base_folder = f"results/{dataset_name}"
-os.makedirs(results_base_folder, exist_ok=True)
+# results_base_folder = f"results/{dataset_name}"
+# os.makedirs(results_base_folder, exist_ok=True)
 
-# Generate unique run folder
-run_id = 1
-while True:
-    run_folder_name = f"run_{run_id:03d}"
-    run_folder_path = os.path.join(results_base_folder, run_folder_name)
-    if not os.path.exists(run_folder_path):
-        os.makedirs(run_folder_path)
-        break
-    run_id += 1
+# # Generate unique run folder
+# run_id = 1
+# while True:
+#     run_folder_name = f"run_{run_id:03d}"
+#     run_folder_path = os.path.join(results_base_folder, run_folder_name)
+#     if not os.path.exists(run_folder_path):
+#         os.makedirs(run_folder_path)
+#         break
+#     run_id += 1
 
-filename = f"correlations.csv"
-file_path = os.path.join(run_folder_path, filename)
+# filename = f"correlations.csv"
+# file_path = os.path.join(run_folder_path, filename)
 
-# Save
-df.to_csv(file_path, index=True)
-print("Salvo em:", file_path)
+# # Save
+# df.to_csv(file_path, index=True)
+# print("Salvo em:", file_path)
 
-with open(f"{run_folder_path}/fidelity.txt", "w") as f:
-    if gnn_explainer_fidelity_metrics:
-        for key, value in gnn_explainer_fidelity_metrics.items():
-            print(f"{key}: {value}", file=f)
-    # if gt_metrics:
-    #     print("\n--- Ground Truth Metrics ---", file=f)
-    #     for key, value in gt_metrics.items():
-    #         print(f"{key}: {value}", file=f)
-with open(f"{run_folder_path}/parameters.txt", "w") as f:
-    print(f"epochs: {gnn_explainer_epochs}", file=f)
-    print(f"lr: {gnn_explainer_lr}", file=f)
-    print(f"explanation_type: {explanation_type}", file=f)
-    print(f"model_type: {model_type}", file=f)
-    print(f"model_params: {model_params}", file=f)
+# with open(f"{run_folder_path}/fidelity.txt", "w") as f:
+#     if gnn_explainer_fidelity_metrics:
+#         for key, value in gnn_explainer_fidelity_metrics.items():
+#             print(f"{key}: {value}", file=f)
+#     # if gt_metrics:
+#     #     print("\n--- Ground Truth Metrics ---", file=f)
+#     #     for key, value in gt_metrics.items():
+#     #         print(f"{key}: {value}", file=f)
+# with open(f"{run_folder_path}/parameters.txt", "w") as f:
+#     print(f"epochs: {gnn_explainer_epochs}", file=f)
+#     print(f"lr: {gnn_explainer_lr}", file=f)
+#     print(f"explanation_type: {explanation_type}", file=f)
+#     print(f"model_type: {model_type}", file=f)
+#     print(f"model_params: {model_params}", file=f)

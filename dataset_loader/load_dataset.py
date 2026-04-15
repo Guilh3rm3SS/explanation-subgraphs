@@ -1,5 +1,6 @@
 import os.path as osp
 import torch
+from torch_geometric.data import Data
 from torch_geometric.datasets import KarateClub, Planetoid, TUDataset, ExplainerDataset
 from torch_geometric.datasets.graph_generator import BAGraph
 from torch_geometric.datasets.motif_generator import HouseMotif, CycleMotif
@@ -88,3 +89,51 @@ def synthetic_dataset():
         data.test_mask[indices[int(0.8 * num_nodes):]] = True
 
     return dataset, data
+
+
+def filter_explanation_by_mask(exp, mask):
+    """
+    Filtra um grafo/explanation pelo mask de nós e retorna um Data limpo.
+    """
+
+    mask = mask.bool()
+    num_nodes = mask.size(0)
+
+    # -------------------------
+    # 1. Mapear nós antigos -> novos índices
+    # -------------------------
+    old_to_new = -torch.ones(num_nodes, dtype=torch.long)
+    old_to_new[mask] = torch.arange(mask.sum())
+
+    # -------------------------
+    # 2. Filtrar nós
+    # -------------------------
+    x = exp.x[mask] if hasattr(exp, "x") else None
+    y = exp.y[mask] if hasattr(exp, "y") else None
+
+    # -------------------------
+    # 3. Filtrar arestas (ambos nós precisam estar no mask)
+    # -------------------------
+    src, dst = exp.edge_index
+    edge_keep = mask[src] & mask[dst]
+
+    edge_index = exp.edge_index[:, edge_keep]
+    edge_index = old_to_new[edge_index]
+
+    # -------------------------
+    # 4. Criar Data final
+    # -------------------------
+    data = Data(
+        x=x,
+        edge_index=edge_index,
+        y=y
+    )
+
+    # -------------------------
+    # 5. Copiar masks se existirem
+    # -------------------------
+    for attr in ["train_mask", "val_mask", "valid_mask", "test_mask", "shape"]:
+        if hasattr(exp, attr):
+            data[attr] = getattr(exp, attr)[mask]
+
+    return data
