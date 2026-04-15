@@ -9,8 +9,7 @@ def get_explainer(model, data, node_index=None,
                          edge_mask_type="object",
                          num_layers=2,
                          explanation_type="model",
-                         algorithm="gnnexplainer",
-                         task_level="node"):
+                         algorithm="gnnexplainer"):
     """
     Gera explicações para um nó usando o algoritmo especificado.
     algorithm pode ser: 'gnnexplainer', 'pgexplainer',
@@ -45,8 +44,8 @@ def get_explainer(model, data, node_index=None,
         edge_mask_type=edge_mask_type,
         model_config=dict(
             mode='multiclass_classification',
-            task_level=task_level,
-            return_type='raw',
+            task_level='node',
+            return_type='log_probs',
         )
     )
 

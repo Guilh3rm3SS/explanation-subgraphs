@@ -34,13 +34,12 @@ def load_dataset(choice="KarateClub"):
         dataset = ShapeGGen(
             model_layers=2,
             num_subgraphs=10,
-            shape="house",
             subgraph_size=15,
             prob_connection=0.8,
             add_sensitive_feature=True,
             n_features=10,
-            n_informative_features=10,
-            seed=48,
+            n_informative_features=3,
+            seed=42,
             class_sep=1.0
         )
         dataset.num_classes = 2

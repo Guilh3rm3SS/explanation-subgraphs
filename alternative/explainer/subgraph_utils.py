@@ -46,17 +46,3 @@ def get_khop_subgraph(data, node_idx, num_hops=2, relabel_nodes=False):
     ds.node_idx_original = subset
     ds.center_mapping = mapping
     return ds
-
-def get_computational_subgraph(data, node_idx, num_hops=2):
-    subset, _, _, _ = k_hop_subgraph(
-        node_idx=node_idx,
-        num_hops=num_hops,
-        edge_index=data.edge_index,
-        relabel_nodes=False,
-        num_nodes=data.num_nodes,
-    )
-
-    # Exclui o nó central do resultado
-    neighbors = subset[subset != node_idx]
-    
-    return neighbors
