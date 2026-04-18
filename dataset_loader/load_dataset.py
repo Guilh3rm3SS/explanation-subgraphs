@@ -5,6 +5,7 @@ from torch_geometric.datasets import KarateClub, Planetoid, TUDataset, Explainer
 from torch_geometric.datasets.graph_generator import BAGraph
 from torch_geometric.datasets.motif_generator import HouseMotif, CycleMotif
 from graphxai.datasets import ShapeGGen
+from .generators import SyntheticGraphGenerator
 
 def load_dataset(choice="KarateClub"):
     if choice == "Cora":
@@ -36,13 +37,13 @@ def load_dataset(choice="KarateClub"):
             model_layers=2,
             num_subgraphs=10,
             shape="house",
-            subgraph_size=15,
-            prob_connection=0.8,
+            subgraph_size=10,
+            prob_connection=1,
             add_sensitive_feature=True,
             n_features=10,
-            n_informative_features=10,
-            seed=48,
-            class_sep=1.0
+            n_informative_features=3,
+            seed=42,
+            class_sep=0.9
         )
         dataset.num_classes = 2
         data = dataset.get_graph(use_fixed_split=True)
@@ -51,8 +52,17 @@ def load_dataset(choice="KarateClub"):
         data.val_mask = data.valid_mask
         # print(data.shape.to('cpu').numpy())
         # print(data.y.to('cpu').numpy())
+        print(dataset)
+        print("Quantidade de classes: 0: ", (data.y == 0).sum().item(), "1: ", (data.y == 1).sum().item())
+        print("Quantidade de shapes: ", (data.shape == 0).sum().item(), (data.shape > 0).sum().item())
+
+
+    # elif choice == "Paulo":
+    #     generator = SyntheticGraphGenerator(num_nodes=200, num_houses=10) # Menor para visualizar fácil
+    #     data = generator.generate()
 
     return dataset, data.to(torch.device("cuda" if torch.cuda.is_available() else "cpu"))
+
 
 def synthetic_dataset():
     house = ExplainerDataset(
