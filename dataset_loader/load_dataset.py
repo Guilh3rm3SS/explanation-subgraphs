@@ -4,8 +4,8 @@ from torch_geometric.data import Data
 from torch_geometric.datasets import KarateClub, Planetoid, TUDataset, ExplainerDataset
 from torch_geometric.datasets.graph_generator import BAGraph
 from torch_geometric.datasets.motif_generator import HouseMotif, CycleMotif
-from graphxai.datasets import ShapeGGen
-from .generators import SyntheticGraphGenerator
+from graphxai.datasets import ShapeGGen, AlkaneCarbonyl, Benzene
+import random
 
 def load_dataset(choice="KarateClub"):
     if choice == "Cora":
@@ -57,9 +57,6 @@ def load_dataset(choice="KarateClub"):
         print("Quantidade de shapes: ", (data.shape == 0).sum().item(), (data.shape > 0).sum().item())
 
 
-    # elif choice == "Paulo":
-    #     generator = SyntheticGraphGenerator(num_nodes=200, num_houses=10) # Menor para visualizar fácil
-    #     data = generator.generate()
 
     return dataset, data.to(torch.device("cuda" if torch.cuda.is_available() else "cpu"))
 
@@ -147,3 +144,55 @@ def filter_explanation_by_mask(exp, mask):
             data[attr] = getattr(exp, attr)[mask]
 
     return data
+
+def split_molecule_data(graphs, gts, split=(0.7, 0.2, 0.1), seed=42):
+    assert len(graphs) == len(gts)
+
+    n = len(graphs)
+    indices = list(range(n))
+
+    random.seed(seed)
+    random.shuffle(indices)
+
+    train_end = int(split[0] * n)
+    val_end = train_end + int(split[1] * n)
+
+    train_idx = indices[:train_end]
+    val_idx = indices[train_end:val_end]
+    test_idx = indices[val_end:]
+
+    def select(idxs):
+        return (
+            [graphs[i] for i in idxs],
+            [gts[i] for i in idxs]
+        )
+
+    return select(train_idx), select(val_idx), select(test_idx)
+
+
+def load_molecule_datasets(choice="Benzene", split=(0.7, 0.2, 0.1)):
+    if choice == "Benzene":
+        dataset = Benzene()
+    elif choice == "AlkaneCarbonyl":
+        dataset = AlkaneCarbonyl()
+
+    graphs, gts = dataset.graphs, dataset.explanations
+
+    merged_gts = []
+    for gt in gts:
+        # gt is a list of Explanation objects
+        # We need the node_imp from each and merge them
+        merged = torch.stack([e.node_imp for e in gt]).max(dim=0).values
+        merged_gts.append(merged)
+
+    (train_g, train_gt), (val_g, val_gt), (test_g, test_gt) = split_molecule_data(
+        graphs, merged_gts, split
+    )
+
+    return {
+        "train": (train_g, train_gt),
+        "val": (val_g, val_gt),
+        "test": (test_g, test_gt),
+        "num_features": graphs[0].x.shape[1],
+        "num_classes": 2 # Both Benzene and AlkaneCarbonyl are usually binary
+    }
